@@ -9,13 +9,12 @@ import SwiftUI
 
 struct SignUp: View {
     /// View Properties
+    @StateObject var viewModel = SignUpViewModel(dataManager: DataManager())
     @State private var fullName = ""
     @State private var password = ""
     @State private var checkPassword = ""
     @State private var pilotLicenseType = ""
-    /// Optional, Present If you want to ask OTP for Signup
-    @State private var askOTP: Bool = false
-    @State private var otpText: String = ""
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 15, content: {
             Text("SignUp")
@@ -35,7 +34,10 @@ struct SignUp: View {
                 CustomTF(sfIcon: "person", hint: "Full Name", value: $fullName)
                     .padding(.top, 5)
                 
-                CustomTF(sfIcon: "person", hint: "Pilot License Type", isDropdown: true, options: ["Bla", "Bla", "Bla"], value: $pilotLicenseType)
+                CustomTF(sfIcon: "person", hint: "Pilot License Type", isDropdown: true, options: viewModel.pilotLicenceTypes, value: $pilotLicenseType)
+                    .onAppear {
+                        viewModel.getPilotLicenses()
+                    }
                 
                 CustomTF(sfIcon: "lock", hint: "Password", isPassword: true, value: $password)
                     .padding(.top, 5)
@@ -50,8 +52,7 @@ struct SignUp: View {
                 
                 /// SignUp Button
                 GradientButton(title: "Continue", icon: "arrow.right") {
-                    /// YOUR CODE
-                    askOTP.toggle()
+                   // Action
                 }
                 .hSpacing(.trailing)
                 /// Disabling Until the Data is Entered

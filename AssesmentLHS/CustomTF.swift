@@ -111,11 +111,9 @@ struct CustomTF: View {
                                 }
                             }
                         
-//                        if index != options.count - 1 {
                             Divider()
-                                .padding(2) // optional padding for divider alignment
-//                        }
-                    }
+                                .padding(1) // optional padding for divider alignment
+                        }
                 }
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)

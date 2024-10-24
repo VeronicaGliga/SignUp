@@ -18,6 +18,11 @@
 		D2553CCE2CC953130070C089 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CCD2CC953130070C089 /* CustomTF.swift */; };
 		D2553CD02CC954860070C089 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CCF2CC954860070C089 /* View+Extensions.swift */; };
 		D2553CD22CC956230070C089 /* PilotLicenses.json in Resources */ = {isa = PBXBuildFile; fileRef = D2553CD12CC956230070C089 /* PilotLicenses.json */; };
+		D2553CD42CCA4B260070C089 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD32CCA4B250070C089 /* DataManager.swift */; };
+		D2553CD62CCA4B4A0070C089 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */; };
+		D2553CD82CCA4BC60070C089 /* PilotLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD72CCA4BC60070C089 /* PilotLicense.swift */; };
+		D2553CDA2CCA4CE60070C089 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD92CCA4CE60070C089 /* NetworkError.swift */; };
+		D2553CDC2CCA4E9E0070C089 /* Pilot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CDB2CCA4E9E0070C089 /* Pilot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,11 @@
 		D2553CCD2CC953130070C089 /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 		D2553CCF2CC954860070C089 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D2553CD12CC956230070C089 /* PilotLicenses.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PilotLicenses.json; sourceTree = "<group>"; };
+		D2553CD32CCA4B250070C089 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		D2553CD72CCA4BC60070C089 /* PilotLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotLicense.swift; sourceTree = "<group>"; };
+		D2553CD92CCA4CE60070C089 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		D2553CDB2CCA4E9E0070C089 /* Pilot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pilot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,11 @@
 				D2553CA22CC94E770070C089 /* SignUp.swift */,
 				D2553CCF2CC954860070C089 /* View+Extensions.swift */,
 				D2553CCD2CC953130070C089 /* CustomTF.swift */,
+				D2553CD32CCA4B250070C089 /* DataManager.swift */,
+				D2553CD92CCA4CE60070C089 /* NetworkError.swift */,
+				D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */,
+				D2553CD72CCA4BC60070C089 /* PilotLicense.swift */,
+				D2553CDB2CCA4E9E0070C089 /* Pilot.swift */,
 				D2553CCB2CC952730070C089 /* GradientButton.swift */,
 				D2553CA42CC94E7E0070C089 /* Assets.xcassets */,
 				D2553CD12CC956230070C089 /* PilotLicenses.json */,
@@ -272,11 +287,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2553CD82CCA4BC60070C089 /* PilotLicense.swift in Sources */,
 				D2553CA32CC94E770070C089 /* SignUp.swift in Sources */,
+				D2553CD42CCA4B260070C089 /* DataManager.swift in Sources */,
 				D2553CCC2CC952730070C089 /* GradientButton.swift in Sources */,
 				D2553CCE2CC953130070C089 /* CustomTF.swift in Sources */,
 				D2553CD02CC954860070C089 /* View+Extensions.swift in Sources */,
+				D2553CDC2CCA4E9E0070C089 /* Pilot.swift in Sources */,
+				D2553CDA2CCA4CE60070C089 /* NetworkError.swift in Sources */,
 				D2553CA12CC94E770070C089 /* AssesmentLHSApp.swift in Sources */,
+				D2553CD62CCA4B4A0070C089 /* SignUpViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
