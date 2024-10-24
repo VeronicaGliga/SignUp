@@ -11,12 +11,14 @@ struct CustomTF: View {
     var sfIcon: String
     var iconTint: Color = .gray
     var hint: String
-    /// Hides TextField
     var isPassword: Bool = false
+    var isDropdown: Bool = false
+    var options: [String] = []
     @Binding var value: String
+    
     /// View Properties
     @State private var showPassword: Bool = false
-    /// When Switching Between Hide/Reveal Password Field, The Keyboard is Closing, to avoid that using the FocusState
+    @State private var showDropdown: Bool = false
     @FocusState private var passwordState: HideState?
     
     enum HideState {
@@ -25,48 +27,101 @@ struct CustomTF: View {
     }
     
     var body: some View {
-        HStack(alignment: .top, spacing: 8, content: {
-            Image(systemName: sfIcon)
-                .foregroundStyle(iconTint)
-                /// Since I Need Same Width to Align TextFields Equally
-                .frame(width: 30)
-                /// Slightly Bringing Down
-                .offset(y: 2)
-            
-            VStack(alignment: .leading, spacing: 8, content: {
-                if isPassword {
-                    Group {
-                        /// Revealing Password when users wants to show Password
-                        if showPassword {
-                            TextField(hint, text: $value)
-                                .focused($passwordState, equals: .reveal)
-                        } else {
-                            SecureField(hint, text: $value)
-                                .focused($passwordState, equals: .hide)
+        VStack(alignment: .leading) {
+            HStack(alignment: .top, spacing: 8) {
+                Image(systemName: sfIcon)
+                    .foregroundStyle(iconTint)
+                    /// Ensuring the same width to align TextFields equally
+                    .frame(width: 30)
+                    .offset(y: 2)
+                
+                VStack(alignment: .leading, spacing: 8, content: {
+                    if isPassword {
+                        Group {
+                            /// Revealing Password when the user wants to show the password
+                            if showPassword {
+                                TextField(hint, text: $value)
+                                    .focused($passwordState, equals: .reveal)
+                            } else {
+                                SecureField(hint, text: $value)
+                                    .focused($passwordState, equals: .hide)
+                            }
+                        }
+                    } else if isDropdown {
+                        // Display TextField for dropdown selection
+                        TextField(hint, text: $value)
+                            .onTapGesture {
+                                withAnimation {
+                                    showDropdown.toggle()
+                                }
+                            }
+                            .onChange(of: value) {
+                                value = ""
+                            }
+                    } else {
+                        // Default TextField
+                        TextField(hint, text: $value)
+                    }
+                    
+                    Divider()
+                })
+                .overlay(alignment: .trailing) {
+                    if isPassword {
+                        /// Password reveal button
+                        Button {
+                            withAnimation {
+                                showPassword.toggle()
+                            }
+                            passwordState = showPassword ? .reveal : .hide
+                        } label: {
+                            Image(systemName: showPassword ? "eye.slash" : "eye")
+                                .foregroundStyle(.gray)
+                                .padding(10)
+                                .contentShape(.rect)
+                        }
+                    } else if isDropdown {
+                        /// Dropdown toggle button
+                        Button {
+                            withAnimation {
+                                showDropdown.toggle()
+                            }
+                        } label: {
+                            Image(systemName: "chevron.down")
+                                .foregroundStyle(.gray)
+                                .padding(10)
+                                .contentShape(.rect)
                         }
                     }
-                } else {
-                    TextField(hint, text: $value)
-                }
-                
-                Divider()
-            })
-            .overlay(alignment: .trailing) {
-                /// Password Reveal Button
-                if isPassword {
-                    Button(action: {
-                        withAnimation {
-                            showPassword.toggle()
-                        }
-                        passwordState = showPassword ? .reveal : .hide
-                    }, label: {
-                        Image(systemName: showPassword ? "eye.slash" : "eye")
-                            .foregroundStyle(.gray)
-                            .padding(10)
-                            .contentShape(.rect)
-                    })
                 }
             }
-        })
+            
+            // Show dropdown options when the dropdown is open
+            if showDropdown && isDropdown {
+                VStack(alignment: .leading, spacing: 0) {
+                    ForEach(options, id: \.self) { option in
+                        Text(option)
+                            .padding(.vertical, 8)
+                            .padding(.horizontal)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(Color.white)
+                            .onTapGesture {
+                                withAnimation {
+                                    value = option
+                                    showDropdown = false
+                                }
+                            }
+                        
+//                        if index != options.count - 1 {
+                            Divider()
+                                .padding(2) // optional padding for divider alignment
+//                        }
+                    }
+                }
+                .background(Color.gray.opacity(0.2))
+                .cornerRadius(5)
+                .shadow(radius: 5)
+                .zIndex(1) // Ensure it stays on top
+            }
+        }
     }
 }
