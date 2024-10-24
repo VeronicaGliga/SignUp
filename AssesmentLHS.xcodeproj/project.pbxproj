@@ -23,6 +23,8 @@
 		D2553CD82CCA4BC60070C089 /* PilotLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD72CCA4BC60070C089 /* PilotLicense.swift */; };
 		D2553CDA2CCA4CE60070C089 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD92CCA4CE60070C089 /* NetworkError.swift */; };
 		D2553CDC2CCA4E9E0070C089 /* Pilot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CDB2CCA4E9E0070C089 /* Pilot.swift */; };
+		D2553CE62CCA8CC40070C089 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CE52CCA8CC40070C089 /* ConfirmationView.swift */; };
+		D2553CE82CCA935E0070C089 /* AnimatedSideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CE72CCA935E0070C089 /* AnimatedSideBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D2553CD72CCA4BC60070C089 /* PilotLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotLicense.swift; sourceTree = "<group>"; };
 		D2553CD92CCA4CE60070C089 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D2553CDB2CCA4E9E0070C089 /* Pilot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pilot.swift; sourceTree = "<group>"; };
+		D2553CE52CCA8CC40070C089 /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		D2553CE72CCA935E0070C089 /* AnimatedSideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedSideBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 				D2553CCD2CC953130070C089 /* CustomTF.swift */,
 				D2553CCB2CC952730070C089 /* GradientButton.swift */,
 				D2553CA22CC94E770070C089 /* SignUp.swift */,
+				D2553CE52CCA8CC40070C089 /* ConfirmationView.swift */,
+				D2553CE72CCA935E0070C089 /* AnimatedSideBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +341,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2553CE62CCA8CC40070C089 /* ConfirmationView.swift in Sources */,
+				D2553CE82CCA935E0070C089 /* AnimatedSideBar.swift in Sources */,
 				D2553CD82CCA4BC60070C089 /* PilotLicense.swift in Sources */,
 				D2553CA32CC94E770070C089 /* SignUp.swift in Sources */,
 				D2553CD42CCA4B260070C089 /* DataManager.swift in Sources */,
