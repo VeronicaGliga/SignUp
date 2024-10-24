@@ -55,9 +55,6 @@ struct CustomTF: View {
                                     showDropdown.toggle()
                                 }
                             }
-                            .onChange(of: value) {
-                                value = ""
-                            }
                     } else {
                         // Default TextField
                         TextField(hint, text: $value)

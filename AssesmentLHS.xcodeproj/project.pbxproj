@@ -114,19 +114,13 @@
 			isa = PBXGroup;
 			children = (
 				D2553CA02CC94E770070C089 /* AssesmentLHSApp.swift */,
-				D2553CA22CC94E770070C089 /* SignUp.swift */,
-				D2553CCF2CC954860070C089 /* View+Extensions.swift */,
-				D2553CCD2CC953130070C089 /* CustomTF.swift */,
-				D2553CD32CCA4B250070C089 /* DataManager.swift */,
-				D2553CD92CCA4CE60070C089 /* NetworkError.swift */,
-				D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */,
-				D2553CD72CCA4BC60070C089 /* PilotLicense.swift */,
-				D2553CDB2CCA4E9E0070C089 /* Pilot.swift */,
-				D2553CCB2CC952730070C089 /* GradientButton.swift */,
-				D2553CA42CC94E7E0070C089 /* Assets.xcassets */,
-				D2553CD12CC956230070C089 /* PilotLicenses.json */,
-				D2553CA62CC94E7E0070C089 /* AssesmentLHS.entitlements */,
+				D2553CE12CCA51D90070C089 /* Helpers */,
+				D2553CDF2CCA51C20070C089 /* Model */,
 				D2553CA72CC94E7E0070C089 /* Preview Content */,
+				D2553CE22CCA51E80070C089 /* Resources */,
+				D2553CE02CCA51CC0070C089 /* Service */,
+				D2553CDD2CCA51AA0070C089 /* View */,
+				D2553CDE2CCA51B50070C089 /* ViewModel */,
 			);
 			path = AssesmentLHS;
 			sourceTree = "<group>";
@@ -154,6 +148,60 @@
 				D2553CBE2CC94E800070C089 /* AssesmentLHSUITestsLaunchTests.swift */,
 			);
 			path = AssesmentLHSUITests;
+			sourceTree = "<group>";
+		};
+		D2553CDD2CCA51AA0070C089 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D2553CCD2CC953130070C089 /* CustomTF.swift */,
+				D2553CCB2CC952730070C089 /* GradientButton.swift */,
+				D2553CA22CC94E770070C089 /* SignUp.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D2553CDE2CCA51B50070C089 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D2553CDF2CCA51C20070C089 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2553CDB2CCA4E9E0070C089 /* Pilot.swift */,
+				D2553CD72CCA4BC60070C089 /* PilotLicense.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D2553CE02CCA51CC0070C089 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D2553CD32CCA4B250070C089 /* DataManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		D2553CE12CCA51D90070C089 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D2553CD92CCA4CE60070C089 /* NetworkError.swift */,
+				D2553CCF2CC954860070C089 /* View+Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D2553CE22CCA51E80070C089 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D2553CA62CC94E7E0070C089 /* AssesmentLHS.entitlements */,
+				D2553CA42CC94E7E0070C089 /* Assets.xcassets */,
+				D2553CD12CC956230070C089 /* PilotLicenses.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,7 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = AssesmentLHS/AssesmentLHS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = AssesmentLHS/Resources/AssesmentLHS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AssesmentLHS/Preview Content\"";
@@ -488,7 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = AssesmentLHS/AssesmentLHS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = AssesmentLHS/Resources/AssesmentLHS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AssesmentLHS/Preview Content\"";
