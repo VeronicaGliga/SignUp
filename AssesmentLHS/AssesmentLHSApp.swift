@@ -11,7 +11,7 @@ import SwiftUI
 struct AssesmentLHSApp: App {
     var body: some Scene {
         WindowGroup {
-            SignUp()
+            ContentView()
         }
     }
 }

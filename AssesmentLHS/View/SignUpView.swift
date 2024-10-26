@@ -7,13 +7,16 @@
 
 import SwiftUI
 
-struct SignUp: View {
+struct SignUpView: View {
     /// View Properties
-    @StateObject var viewModel = SignUpViewModel(dataManager: DataManager())
+    
+    @ObservedObject var coordinator: AppCoordinator
     @State private var fullName = ""
     @State private var password = ""
     @State private var checkPassword = ""
     @State private var pilotLicenseType = ""
+    
+    @StateObject var viewModel = SignUpViewModel(dataManager: DataManager())
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15, content: {
@@ -53,10 +56,11 @@ struct SignUp: View {
                 /// SignUp Button
                 GradientButton(title: "Continue", icon: "arrow.right") {
                    // Action
+                    coordinator.navigateToConfirmation()
                 }
                 .hSpacing(.trailing)
                 /// Disabling Until the Data is Entered
-                .disableWithOpacity(fullName.isEmpty || password.isEmpty || checkPassword.isEmpty)
+                .disableWithOpacity(!validateInput(name: fullName, pilotLicense: pilotLicenseType, password: password, checkPassword: checkPassword))
             }
             .padding(.top, 20)
             
@@ -66,8 +70,58 @@ struct SignUp: View {
         .padding(.horizontal, 25)
         .toolbar(.hidden, for: .navigationBar)
     }
+    
+    private func validateInput(name: String, 
+                               pilotLicense: String,
+                               password: String,
+                               checkPassword: String) -> Bool {
+        let isNameValid = !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let isPilotLicenseValid = viewModel.pilotLicenceTypes.contains(pilotLicense)
+        let isPasswordValid = isPasswordValid()
+        let isCheckedPasswordValid = password == checkPassword
+        
+        return isNameValid && isPilotLicenseValid && isPasswordValid && isCheckedPasswordValid
+    }
+    
+    private func isPasswordValid() -> Bool {
+        // Check for at least 12 characters
+        guard password.count >= 12 else {
+            return false
+        }
+        
+        // Check if username is not in password (case insensitive)
+        if fullName.lowercased()
+            .split(separator: " ")
+            .contains(where: { password.lowercased().contains($0) }) {
+            return false
+        }
+        
+        // Initialize flags for character requirements
+        var hasUppercase = false
+        var hasLowercase = false
+        var hasDigit = false
+        
+        // Iterate over each character in password to check requirements
+        for char in password {
+            if char.isUppercase {
+                hasUppercase = true
+            } else if char.isLowercase {
+                hasLowercase = true
+            } else if char.isNumber {
+                hasDigit = true
+            }
+            
+            // If all conditions are met, break early
+            if hasUppercase && hasLowercase && hasDigit {
+                return true
+            }
+        }
+        
+        // If any requirement is missing, return false
+        return false
+    }
 }
 
 #Preview {
-    SignUp()
+    ContentView()
 }

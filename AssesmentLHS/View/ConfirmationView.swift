@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct ConfirmationView: View {
-    var userName: String
-    var pilotLicense: String
-    var allowedAircraft: [String]
-    var logoutAction: () -> Void
     
     @State private var showMenu = false
+    @ObservedObject var coordinator: AppCoordinator
+    @ObservedObject var viewModel: ConfirmationViewModel
 
     var body: some View {
         AnimatedSideBar(
@@ -23,11 +21,11 @@ struct ConfirmationView: View {
                 NavigationStack {
                     VStack(alignment: .leading, spacing: 15) {
                         // Welcome text with user's name and pilot license
-                        Text("Welcome, \(userName)")
+                        Text("Welcome, \(viewModel.userName)")
                             .font(.largeTitle)
                             .fontWeight(.heavy)
                         
-                        Text("Pilot License: \(pilotLicense)")
+                        Text("Pilot License: \(viewModel.pilotLicense.type)")
                             .font(.callout)
                             .fontWeight(.semibold)
                             .foregroundStyle(.gray)
@@ -38,7 +36,7 @@ struct ConfirmationView: View {
                             .font(.title2)
                             .padding(.top, 10)
                         
-                        List(allowedAircraft, id: \.self) { aircraft in
+                        List(viewModel.pilotLicense.aircrafts, id: \.self) { aircraft in
                             Text(aircraft)
                         }
                         .listStyle(.inset)
@@ -78,7 +76,7 @@ struct ConfirmationView: View {
             Spacer(minLength: 0)
             
             SideBarButton(.logout) {
-                logoutAction()
+                coordinator.logout()
             }
         }
         .padding(.horizontal, 15)
@@ -129,6 +127,6 @@ struct ConfirmationView: View {
 
 struct ConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationView(userName: "John Doe", pilotLicense: "ABC12345", allowedAircraft: ["Boeing 737", "Airbus A320"], logoutAction: {})
+        ConfirmationView(coordinator: AppCoordinator(), viewModel: ConfirmationViewModel(userName: "John Doe", pilotLicense: PilotLicense(type: "ATPL", aircrafts: ["B737", "A380", "B747"])))
     }
 }

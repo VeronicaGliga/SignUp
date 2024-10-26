@@ -35,7 +35,7 @@ struct CustomTF: View {
                     .frame(width: 30)
                     .offset(y: 2)
                 
-                VStack(alignment: .leading, spacing: 8, content: {
+                VStack(alignment: .leading, spacing: 8) {
                     if isPassword {
                         Group {
                             /// Revealing Password when the user wants to show the password
@@ -61,7 +61,7 @@ struct CustomTF: View {
                     }
                     
                     Divider()
-                })
+                }
                 .overlay(alignment: .trailing) {
                     if isPassword {
                         /// Password reveal button
