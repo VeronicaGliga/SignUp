@@ -8,26 +8,31 @@
 import SwiftUI
 
 struct CustomTF: View {
+    // MARK: - Properties
+    
     var sfIcon: String
     var iconTint: Color = .gray
     var hint: String
-    var isPassword: Bool = false
-    var isDropdown: Bool = false
-    var options: [String] = []
+    var isPassword = false
+    var isDropdown = false
+    var options = [String]()
     @Binding var value: String
     var validationAction: () -> String
     
+    
     /// View Properties
-    @State private var showPassword: Bool = false
-    @State private var showDropdown: Bool = false
-    @FocusState private var passwordState: HideState?
-    @State private var validationErrorMessage = "" // Local validity state
+    @State private var showPassword = false
+    @State private var showDropdown = false
+    @State private var passwordState: HideState?
+    @State private var validationErrorMessage = ""
     @FocusState private var isFocused: Bool // Tracks if the field is focused
     
     enum HideState {
         case hide
         case reveal
     }
+    
+    // MARK: - Body
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -42,7 +47,7 @@ struct CustomTF: View {
             HStack(alignment: .top, spacing: 8) {
                 Image(systemName: sfIcon)
                     .foregroundStyle(iconTint)
-                    /// Ensuring the same width to align TextFields equally
+                /// Ensuring the same width to align TextFields equally
                     .frame(width: 30)
                     .offset(y: 2)
                 
@@ -54,21 +59,13 @@ struct CustomTF: View {
                                 TextField(hint, text: $value)
                                     .focused($isFocused)
                                     .onChange(of: isFocused) {
-                                        if !isFocused {
-                                            validationErrorMessage = validationAction()
-                                        } else {
-                                            validationErrorMessage = ""
-                                        }
+                                        validationErrorMessage = isFocused ? "" : validationAction()
                                     }
                             } else {
                                 SecureField(hint, text: $value)
                                     .focused($isFocused)
                                     .onChange(of: isFocused) {
-                                        if !isFocused {
-                                            validationErrorMessage = validationAction()
-                                        } else {
-                                            validationErrorMessage = ""
-                                        }
+                                        validationErrorMessage = isFocused ? "" : validationAction()
                                     }
                             }
                         }
@@ -90,11 +87,7 @@ struct CustomTF: View {
                         TextField(hint, text: $value)
                             .focused($isFocused)
                             .onChange(of: isFocused) {
-                                if !isFocused {
-                                    validationErrorMessage = validationAction()
-                                } else {
-                                    validationErrorMessage = ""
-                                }
+                                validationErrorMessage = isFocused ? "" : validationAction()
                             }
                     }
                     
@@ -146,13 +139,14 @@ struct CustomTF: View {
                                 }
                             }
                         
-                            Divider()
-                                .padding(1) // optional padding for divider alignment
-                        }
+                        Divider()
+                            .padding(1) // optional padding for divider alignment
+                    }
                 }
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(5)
-                .shadow(radius: 5)
+                .shadow(radius: 2)
+                .padding(.leading, 38)
                 .zIndex(1) // Ensure it stays on top
             }
             

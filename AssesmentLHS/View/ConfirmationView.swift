@@ -52,12 +52,35 @@ struct ConfirmationView: View {
                         }
                     }
                 }
-        } menuView: { safeArea in
-            SideBarMenuView(safeArea)
-        } background: {
-            Rectangle()
+                .overlay {
+                    CircleView()
+                        .frame(width: 200, height: 200)
+                        /// Moving When the Signup Pages Loads/Dismisses
+                        .offset(x: 80, y: -80)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .frame(maxHeight: .infinity, alignment: .top)
+                    CircleView()
+                        .frame(width: 200, height: 200)
+                        /// Moving When the Signup Pages Loads/Dismisses
+                        .offset(x: -80, y: -80)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxHeight: .infinity, alignment: .bottom)
+                }
+            } menuView: { safeArea in
+                SideBarMenuView(safeArea)
+            } background: {
+                Rectangle()
                 .fill(.linearGradient(colors: [.appYellow, .orange, .red], startPoint: .top, endPoint: .bottom))
         }
+    }
+    
+    @ViewBuilder
+    func CircleView() -> some View {
+        Circle()
+            .fill(.linearGradient(colors: [.appYellow, .orange, .red], 
+                                  startPoint: .top,
+                                  endPoint: .bottom))
+            .blur(radius: 15)
     }
     
     @ViewBuilder

@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct SignUpView: View {
-    /// View Properties
+    // MARK: - Properties
     
     @ObservedObject var viewModel: SignUpViewModel
     
+    // MARK: - Body
+    
     var body: some View {
-        VStack(alignment: .leading, spacing: 15, content: {
+        VStack(alignment: .leading, spacing: 15) {
             Text("SignUp")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
@@ -26,19 +28,34 @@ struct SignUpView: View {
                 .padding(.top, -5)
             
             VStack(spacing: 25) {
-                /// Custom Text Fields
-                CustomTF(sfIcon: "person", hint: "Full Name", value: $viewModel.fullName,  validationAction: viewModel.isNameValid)
+                CustomTF(sfIcon: "person",
+                         hint: "Full Name",
+                         value: $viewModel.fullName,
+                         validationAction: viewModel.isNameValid)
                     .padding(.top, 5)
                 
-                CustomTF(sfIcon: "person", hint: "Pilot License Type", isDropdown: true, options: viewModel.pilotLicenceTypes, value: $viewModel.selectedLicenseType, validationAction: viewModel.isPilotLicenseValid)
+                CustomTF(sfIcon: "person",
+                         hint: "Pilot License Type",
+                         isDropdown: true,
+                         options: viewModel.pilotLicenceTypes,
+                         value: $viewModel.selectedLicenseType,
+                         validationAction: viewModel.isPilotLicenseValid)
                     .onAppear {
                         viewModel.getPilotLicenses()
                     }
                 
-                CustomTF(sfIcon: "lock", hint: "Password", isPassword: true, value: $viewModel.password, validationAction: viewModel.isPasswordValid)
+                CustomTF(sfIcon: "lock", 
+                         hint: "Password",
+                         isPassword: true,
+                         value: $viewModel.password,
+                         validationAction: viewModel.isPasswordValid)
                     .padding(.top, 5)
                 
-                CustomTF(sfIcon: "at", hint: "Password Verification", isPassword: true, value: $viewModel.checkPassword, validationAction: viewModel.isCheckedPasswordValid)
+                CustomTF(sfIcon: "at",
+                         hint: "Password Verification",
+                         isPassword: true,
+                         value: $viewModel.checkPassword,
+                         validationAction: viewModel.isCheckedPasswordValid)
                 
                 Text("By signing up, you're agreeing to our **[Terms & Condition](https://apple.com)** and **[Privacy Policy](https://apple.com)**")
                     .font(.caption)
@@ -47,18 +64,18 @@ struct SignUpView: View {
                     .frame(height: 50)
                 
                 /// SignUp Button
-                GradientButton(title: "Continue", icon: "arrow.right") {
-                   // Action
+                GradientButton(title: "Continue", 
+                               icon: "arrow.right") {
                     viewModel.registerUser()
                 }
                 .frame(maxWidth: .infinity, alignment: .trailing)
-                /// Disabling Until the Data is Entered
+                /// Disabling Until the Data is Valid
                 .disableWithOpacity(!viewModel.validateInput())
             }
             .padding(.top, 20)
             
             Spacer(minLength: 0)
-        })
+        }
         .padding(.vertical, 15)
         .padding(.horizontal, 25)
         .toolbar(.hidden, for: .navigationBar)
