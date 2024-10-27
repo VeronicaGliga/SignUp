@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class DependencyContainer: ObservableObject {
+    // MARK: - Properties
     @Published var coordinator: AppCoordinator
     
     let pilotLicenseManager: PilotLicenseManager
@@ -16,17 +17,14 @@ class DependencyContainer: ObservableObject {
     
     var anyCancellable: AnyCancellable? = nil
 
+    // MARK: - Init
+    
     init() {
-        
         let fileStorage = FileStorage<Pilot>()
-        let dataManager = DataManager(storage: fileStorage)
-        self.pilotLicenseManager = PilotLicenseManager(dataManager: dataManager)
-        
+        self.pilotLicenseManager = PilotLicenseManager(dataManager: fileStorage)
         
         let userDefaultsStorage = UserDefaultsStorage<User>()
-        let cacheManager = DataManager(storage: userDefaultsStorage)
-        self.userManager = UserManager(dataManager: cacheManager)
-        
+        self.userManager = UserManager(dataManager: userDefaultsStorage)
         
         self.coordinator = AppCoordinator(userManager: userManager)
         
@@ -34,6 +32,5 @@ class DependencyContainer: ObservableObject {
             print("DependencyContainer's coordinator property has changed.")
             self?.objectWillChange.send()
         }
-    
     }
 }

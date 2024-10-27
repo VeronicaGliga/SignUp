@@ -13,6 +13,7 @@ class SignUpViewModel: ObservableObject {
     
     let pilotLicenseManager: PilotLicenseManager
     let userManager: UserManager
+    
     @Published var coordinator: AppCoordinator
     
     @Published var pilotLicenceTypes = [String]()
@@ -58,7 +59,10 @@ class SignUpViewModel: ObservableObject {
     }
     
     func validateInput() -> Bool {
-        isNameValid().isEmpty && isPilotLicenseValid().isEmpty && isPasswordValid().isEmpty && isCheckedPasswordValid().isEmpty
+        isNameValid().isEmpty && 
+        isPilotLicenseValid().isEmpty &&
+        isPasswordValid().isEmpty &&
+        isCheckedPasswordValid().isEmpty
     }
     
     func isNameValid() -> String {
@@ -67,10 +71,6 @@ class SignUpViewModel: ObservableObject {
     
     func isPilotLicenseValid() -> String {
         pilotLicenceTypes.contains(selectedLicenseType) ? "" : "A valid Pilot License should be inserted"
-    }
-    
-    func isCheckedPasswordValid() -> String {
-        password == checkPassword ? "" : "Must be identical to the password"
     }
     
     func isPasswordValid() -> String {
@@ -113,5 +113,9 @@ class SignUpViewModel: ObservableObject {
         // If any requirement is missing, return false
         errorMessage = "Password must contain a combination of uppercased, lowercased and numbers"
         return errorMessage
+    }
+    
+    func isCheckedPasswordValid() -> String {
+        password == checkPassword ? "" : "Must be identical to the password"
     }
 }

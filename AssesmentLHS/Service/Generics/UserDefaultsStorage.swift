@@ -7,9 +7,12 @@
 
 import Foundation
 
-class UserDefaultsStorage<T: Codable>: DataProvider {
+class UserDefaultsStorage<T: Codable>: DataFecher, DataHandler {
+    // MARK: - Properties
     
     private let userDefaults = UserDefaults.standard
+    
+    // MARK: - Functions
 
     func save(_ item: T, forKey key: String) throws {
         let data = try JSONEncoder().encode(item)

@@ -18,7 +18,6 @@
 		D2553CCE2CC953130070C089 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CCD2CC953130070C089 /* CustomTF.swift */; };
 		D2553CD02CC954860070C089 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CCF2CC954860070C089 /* View+Extensions.swift */; };
 		D2553CD22CC956230070C089 /* PilotLicenses.json in Resources */ = {isa = PBXBuildFile; fileRef = D2553CD12CC956230070C089 /* PilotLicenses.json */; };
-		D2553CD42CCA4B260070C089 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD32CCA4B250070C089 /* DataManager.swift */; };
 		D2553CD62CCA4B4A0070C089 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */; };
 		D2553CD82CCA4BC60070C089 /* PilotLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD72CCA4BC60070C089 /* PilotLicense.swift */; };
 		D2553CDA2CCA4CE60070C089 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD92CCA4CE60070C089 /* NetworkError.swift */; };
@@ -29,12 +28,13 @@
 		D28B3F9F2CCD10D3007BFD73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3F9E2CCD10D3007BFD73 /* ContentView.swift */; };
 		D28B3FA12CCD1F52007BFD73 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA02CCD1F52007BFD73 /* ConfirmationViewModel.swift */; };
 		D28B3FA42CCD2392007BFD73 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA32CCD2392007BFD73 /* User.swift */; };
-		D28B3FA62CCD26DD007BFD73 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA52CCD26DD007BFD73 /* DataProvider.swift */; };
+		D28B3FA62CCD26DD007BFD73 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA52CCD26DD007BFD73 /* DataHandler.swift */; };
 		D28B3FA82CCD2DF5007BFD73 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA72CCD2DF5007BFD73 /* UserDefaultsStorage.swift */; };
 		D28B3FAA2CCD2F63007BFD73 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA92CCD2F63007BFD73 /* FileStorage.swift */; };
 		D28B3FAC2CCD322B007BFD73 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FAB2CCD322B007BFD73 /* UserManager.swift */; };
 		D28B3FAE2CCD34BE007BFD73 /* PilotLicenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FAD2CCD34BE007BFD73 /* PilotLicenseManager.swift */; };
 		D28B3FB02CCD3F22007BFD73 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FAF2CCD3F22007BFD73 /* DependencyContainer.swift */; };
+		D28B3FB32CCEB6B7007BFD73 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FB22CCEB6B7007BFD73 /* DataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +70,6 @@
 		D2553CCD2CC953130070C089 /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 		D2553CCF2CC954860070C089 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D2553CD12CC956230070C089 /* PilotLicenses.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PilotLicenses.json; sourceTree = "<group>"; };
-		D2553CD32CCA4B250070C089 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		D2553CD72CCA4BC60070C089 /* PilotLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotLicense.swift; sourceTree = "<group>"; };
 		D2553CD92CCA4CE60070C089 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -81,12 +80,13 @@
 		D28B3F9E2CCD10D3007BFD73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D28B3FA02CCD1F52007BFD73 /* ConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewModel.swift; sourceTree = "<group>"; };
 		D28B3FA32CCD2392007BFD73 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		D28B3FA52CCD26DD007BFD73 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		D28B3FA52CCD26DD007BFD73 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		D28B3FA72CCD2DF5007BFD73 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		D28B3FA92CCD2F63007BFD73 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		D28B3FAB2CCD322B007BFD73 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		D28B3FAD2CCD34BE007BFD73 /* PilotLicenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotLicenseManager.swift; sourceTree = "<group>"; };
 		D28B3FAF2CCD3F22007BFD73 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		D28B3FB22CCEB6B7007BFD73 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,12 +248,20 @@
 		D28B3FB12CCE75E9007BFD73 /* Generics */ = {
 			isa = PBXGroup;
 			children = (
-				D2553CD32CCA4B250070C089 /* DataManager.swift */,
-				D28B3FA52CCD26DD007BFD73 /* DataProvider.swift */,
 				D28B3FA92CCD2F63007BFD73 /* FileStorage.swift */,
 				D28B3FA72CCD2DF5007BFD73 /* UserDefaultsStorage.swift */,
+				D28B3FB42CCEB6C1007BFD73 /* Protocols */,
 			);
 			path = Generics;
+			sourceTree = "<group>";
+		};
+		D28B3FB42CCEB6C1007BFD73 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D28B3FA52CCD26DD007BFD73 /* DataHandler.swift */,
+				D28B3FB22CCEB6B7007BFD73 /* DataFetcher.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28B3FA12CCD1F52007BFD73 /* ConfirmationViewModel.swift in Sources */,
+				D28B3FB32CCEB6B7007BFD73 /* DataFetcher.swift in Sources */,
 				D2553CE62CCA8CC40070C089 /* ConfirmationView.swift in Sources */,
 				D2553CE82CCA935E0070C089 /* AnimatedSideBar.swift in Sources */,
 				D28B3F9F2CCD10D3007BFD73 /* ContentView.swift in Sources */,
@@ -395,14 +404,13 @@
 				D2553CD82CCA4BC60070C089 /* PilotLicense.swift in Sources */,
 				D2553CA32CC94E770070C089 /* SignUpView.swift in Sources */,
 				D28B3FAE2CCD34BE007BFD73 /* PilotLicenseManager.swift in Sources */,
-				D2553CD42CCA4B260070C089 /* DataManager.swift in Sources */,
 				D2553CCC2CC952730070C089 /* GradientButton.swift in Sources */,
 				D2553CCE2CC953130070C089 /* CustomTF.swift in Sources */,
 				D2553CD02CC954860070C089 /* View+Extensions.swift in Sources */,
 				D28B3FAA2CCD2F63007BFD73 /* FileStorage.swift in Sources */,
 				D2553CDC2CCA4E9E0070C089 /* Pilot.swift in Sources */,
 				D2553CDA2CCA4CE60070C089 /* NetworkError.swift in Sources */,
-				D28B3FA62CCD26DD007BFD73 /* DataProvider.swift in Sources */,
+				D28B3FA62CCD26DD007BFD73 /* DataHandler.swift in Sources */,
 				D28B3FB02CCD3F22007BFD73 /* DependencyContainer.swift in Sources */,
 				D2553CA12CC94E770070C089 /* AssesmentLHSApp.swift in Sources */,
 				D2553CD62CCA4B4A0070C089 /* SignUpViewModel.swift in Sources */,

@@ -7,12 +7,18 @@
 
 import Foundation
 
-class PilotLicenseManager: ObservableObject {
-    let dataManager: DataManager<Pilot>
+class PilotLicenseManager {
+    // MARK: - Properties
     
-    init(dataManager: DataManager<Pilot>) {
+    let dataManager: FileStorage<Pilot>
+    
+    // MARK: - Init
+    
+    init(dataManager: FileStorage<Pilot>) {
         self.dataManager = dataManager
     }
+    
+    // MARK: - Functions
     
     func fetchPilotLicense(from path: String) async throws -> Pilot {
         do {

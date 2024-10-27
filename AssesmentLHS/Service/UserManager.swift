@@ -8,11 +8,17 @@
 import Foundation
 
 class UserManager {
-    let dataManager: DataManager<User>
+    // MARK: - Properties
     
-    init(dataManager: DataManager<User>) {
+    let dataManager: UserDefaultsStorage<User>
+    
+    // MARK: - Init
+    
+    init(dataManager: UserDefaultsStorage<User>) {
         self.dataManager = dataManager
     }
+    
+    // MARK: - Functions
     
     func userExists() -> Bool {
         fetchUser() != nil
@@ -20,7 +26,7 @@ class UserManager {
     
     func saveUser(userName: String, pilotLicenseType: PilotLicense) {
         let user = User(fullName: userName, pilotLicenseType: pilotLicenseType)
-        try? dataManager.save(item: user, forKey: "RegisteredUser")
+        try? dataManager.save(user, forKey: "RegisteredUser")
     }
     
     func fetchUser() -> User? {

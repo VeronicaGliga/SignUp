@@ -51,7 +51,7 @@ struct SignUpView: View {
                    // Action
                     viewModel.registerUser()
                 }
-                .hSpacing(.trailing)
+                .frame(maxWidth: .infinity, alignment: .trailing)
                 /// Disabling Until the Data is Entered
                 .disableWithOpacity(!viewModel.validateInput())
             }

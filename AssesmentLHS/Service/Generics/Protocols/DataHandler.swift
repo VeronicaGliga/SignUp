@@ -7,10 +7,9 @@
 
 import Foundation
 
-protocol DataProvider<T> {
+protocol DataHandler<T> {
     associatedtype T
     
     func save(_ item: T, forKey key: String) throws
-    func load(forKey key: String) throws -> T?
     func delete(forKey key: String) throws
 }
