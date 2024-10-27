@@ -8,17 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var coordinator = AppCoordinator()
+    @StateObject private var container = DependencyContainer()
     
     var body: some View {
         Group {
-            if coordinator.currentView == .signUp {
-                SignUpView(coordinator: coordinator, viewModel: SignUpViewModel(dataManager: DataManager()))
+            if container.coordinator.currentView == .confirmation {
+                if let user = container.userManager.fetchUser() {
+                    ConfirmationView(viewModel: ConfirmationViewModel(userManager: container.userManager,
+                                                                      coordinator: container.coordinator,
+                                                                      user: user))
+                }
             } else {
-                ConfirmationView(coordinator: coordinator, viewModel: ConfirmationViewModel(userName: "John Doe", pilotLicense: PilotLicense(type: "ATPL", aircrafts: ["B737", "A380", "B747"])))
+                    SignUpView(viewModel: SignUpViewModel(pilotLicenseManager: container.pilotLicenseManager,
+                                                          userManager: container.userManager, coordinator: container.coordinator))
+                
             }
         }
-        .animation(.easeInOut, value: coordinator.currentView)
+        .animation(.easeInOut, value: container.coordinator.currentView)
     }
 }
 

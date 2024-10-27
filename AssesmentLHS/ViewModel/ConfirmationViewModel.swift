@@ -7,12 +7,21 @@
 
 import Foundation
 
+@MainActor
 class ConfirmationViewModel: ObservableObject {
-    @Published var userName: String
-    @Published var pilotLicense: PilotLicense
+    var userManager: UserManager
+    @Published var coordinator: AppCoordinator
     
-    init(userName: String, pilotLicense: PilotLicense) {
-        self.userName = userName
-        self.pilotLicense = pilotLicense
+    @Published var currentUser: User
+    
+    init(userManager: UserManager, coordinator: AppCoordinator, user: User) {
+        self.userManager = userManager
+        self.coordinator = coordinator
+        self.currentUser = user
+    }
+    
+    func logout() {
+        userManager.deleteUser()
+        coordinator.logout()
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PilotLicense: Decodable {
+struct PilotLicense: Codable {
     let type: String
     let aircrafts: [String]
 }

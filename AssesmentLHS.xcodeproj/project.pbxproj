@@ -28,6 +28,13 @@
 		D28B3F9D2CCD0F55007BFD73 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3F9C2CCD0F55007BFD73 /* AppCoordinator.swift */; };
 		D28B3F9F2CCD10D3007BFD73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3F9E2CCD10D3007BFD73 /* ContentView.swift */; };
 		D28B3FA12CCD1F52007BFD73 /* ConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA02CCD1F52007BFD73 /* ConfirmationViewModel.swift */; };
+		D28B3FA42CCD2392007BFD73 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA32CCD2392007BFD73 /* User.swift */; };
+		D28B3FA62CCD26DD007BFD73 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA52CCD26DD007BFD73 /* DataProvider.swift */; };
+		D28B3FA82CCD2DF5007BFD73 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA72CCD2DF5007BFD73 /* UserDefaultsStorage.swift */; };
+		D28B3FAA2CCD2F63007BFD73 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FA92CCD2F63007BFD73 /* FileStorage.swift */; };
+		D28B3FAC2CCD322B007BFD73 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FAB2CCD322B007BFD73 /* UserManager.swift */; };
+		D28B3FAE2CCD34BE007BFD73 /* PilotLicenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FAD2CCD34BE007BFD73 /* PilotLicenseManager.swift */; };
+		D28B3FB02CCD3F22007BFD73 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FAF2CCD3F22007BFD73 /* DependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +80,13 @@
 		D28B3F9C2CCD0F55007BFD73 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D28B3F9E2CCD10D3007BFD73 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D28B3FA02CCD1F52007BFD73 /* ConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewModel.swift; sourceTree = "<group>"; };
+		D28B3FA32CCD2392007BFD73 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D28B3FA52CCD26DD007BFD73 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		D28B3FA72CCD2DF5007BFD73 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		D28B3FA92CCD2F63007BFD73 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		D28B3FAB2CCD322B007BFD73 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		D28B3FAD2CCD34BE007BFD73 /* PilotLicenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotLicenseManager.swift; sourceTree = "<group>"; };
+		D28B3FAF2CCD3F22007BFD73 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				D2553CA02CC94E770070C089 /* AssesmentLHSApp.swift */,
+				D28B3FA22CCD224C007BFD73 /* Coordinator */,
 				D2553CE12CCA51D90070C089 /* Helpers */,
 				D2553CDF2CCA51C20070C089 /* Model */,
 				D2553CA72CC94E7E0070C089 /* Preview Content */,
@@ -131,7 +146,6 @@
 				D2553CE02CCA51CC0070C089 /* Service */,
 				D2553CDD2CCA51AA0070C089 /* View */,
 				D2553CDE2CCA51B50070C089 /* ViewModel */,
-				D28B3F9C2CCD0F55007BFD73 /* AppCoordinator.swift */,
 			);
 			path = AssesmentLHS;
 			sourceTree = "<group>";
@@ -164,12 +178,12 @@
 		D2553CDD2CCA51AA0070C089 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D2553CE72CCA935E0070C089 /* AnimatedSideBar.swift */,
+				D2553CE52CCA8CC40070C089 /* ConfirmationView.swift */,
+				D28B3F9E2CCD10D3007BFD73 /* ContentView.swift */,
 				D2553CCD2CC953130070C089 /* CustomTF.swift */,
 				D2553CCB2CC952730070C089 /* GradientButton.swift */,
 				D2553CA22CC94E770070C089 /* SignUpView.swift */,
-				D2553CE52CCA8CC40070C089 /* ConfirmationView.swift */,
-				D2553CE72CCA935E0070C089 /* AnimatedSideBar.swift */,
-				D28B3F9E2CCD10D3007BFD73 /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,8 +191,8 @@
 		D2553CDE2CCA51B50070C089 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */,
 				D28B3FA02CCD1F52007BFD73 /* ConfirmationViewModel.swift */,
+				D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -188,6 +202,7 @@
 			children = (
 				D2553CDB2CCA4E9E0070C089 /* Pilot.swift */,
 				D2553CD72CCA4BC60070C089 /* PilotLicense.swift */,
+				D28B3FA32CCD2392007BFD73 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +211,11 @@
 			isa = PBXGroup;
 			children = (
 				D2553CD32CCA4B250070C089 /* DataManager.swift */,
+				D28B3FA52CCD26DD007BFD73 /* DataProvider.swift */,
+				D28B3FA72CCD2DF5007BFD73 /* UserDefaultsStorage.swift */,
+				D28B3FA92CCD2F63007BFD73 /* FileStorage.swift */,
+				D28B3FAB2CCD322B007BFD73 /* UserManager.swift */,
+				D28B3FAD2CCD34BE007BFD73 /* PilotLicenseManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -205,6 +225,7 @@
 			children = (
 				D2553CD92CCA4CE60070C089 /* NetworkError.swift */,
 				D2553CCF2CC954860070C089 /* View+Extensions.swift */,
+				D28B3FAF2CCD3F22007BFD73 /* DependencyContainer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -217,6 +238,14 @@
 				D2553CD12CC956230070C089 /* PilotLicenses.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D28B3FA22CCD224C007BFD73 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D28B3F9C2CCD0F55007BFD73 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,16 +383,23 @@
 				D2553CE62CCA8CC40070C089 /* ConfirmationView.swift in Sources */,
 				D2553CE82CCA935E0070C089 /* AnimatedSideBar.swift in Sources */,
 				D28B3F9F2CCD10D3007BFD73 /* ContentView.swift in Sources */,
+				D28B3FA42CCD2392007BFD73 /* User.swift in Sources */,
 				D2553CD82CCA4BC60070C089 /* PilotLicense.swift in Sources */,
 				D2553CA32CC94E770070C089 /* SignUpView.swift in Sources */,
+				D28B3FAE2CCD34BE007BFD73 /* PilotLicenseManager.swift in Sources */,
 				D2553CD42CCA4B260070C089 /* DataManager.swift in Sources */,
 				D2553CCC2CC952730070C089 /* GradientButton.swift in Sources */,
 				D2553CCE2CC953130070C089 /* CustomTF.swift in Sources */,
 				D2553CD02CC954860070C089 /* View+Extensions.swift in Sources */,
+				D28B3FAA2CCD2F63007BFD73 /* FileStorage.swift in Sources */,
 				D2553CDC2CCA4E9E0070C089 /* Pilot.swift in Sources */,
 				D2553CDA2CCA4CE60070C089 /* NetworkError.swift in Sources */,
+				D28B3FA62CCD26DD007BFD73 /* DataProvider.swift in Sources */,
+				D28B3FB02CCD3F22007BFD73 /* DependencyContainer.swift in Sources */,
 				D2553CA12CC94E770070C089 /* AssesmentLHSApp.swift in Sources */,
 				D2553CD62CCA4B4A0070C089 /* SignUpViewModel.swift in Sources */,
+				D28B3FA82CCD2DF5007BFD73 /* UserDefaultsStorage.swift in Sources */,
+				D28B3FAC2CCD322B007BFD73 /* UserManager.swift in Sources */,
 				D28B3F9D2CCD0F55007BFD73 /* AppCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

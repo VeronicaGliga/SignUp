@@ -16,10 +16,15 @@ enum ViewType {
 // Coordinator for managing navigation
 class AppCoordinator: ObservableObject {
     // This property determines which view is currently displayed
-    @Published var currentView: ViewType = .signUp
+    @Published var currentView: ViewType
+    private var userManager: UserManager
+    
+    init(userManager: UserManager) {
+        self.userManager = userManager
+        // Set initial view based on user existence
+        self.currentView = userManager.userExists() ? .confirmation : .signUp
+    }
 
-    
-    
     // Method to navigate to ConfirmationView
     func navigateToConfirmation() {
         currentView = .confirmation

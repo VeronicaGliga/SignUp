@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ConfirmationView: View {
     
-    @State private var showMenu = false
-    @ObservedObject var coordinator: AppCoordinator
     @ObservedObject var viewModel: ConfirmationViewModel
+    @State private var showMenu = false
 
     var body: some View {
         AnimatedSideBar(
@@ -21,11 +20,11 @@ struct ConfirmationView: View {
                 NavigationStack {
                     VStack(alignment: .leading, spacing: 15) {
                         // Welcome text with user's name and pilot license
-                        Text("Welcome, \(viewModel.userName)")
+                        Text("Welcome, \(viewModel.currentUser.fullName)")
                             .font(.largeTitle)
                             .fontWeight(.heavy)
                         
-                        Text("Pilot License: \(viewModel.pilotLicense.type)")
+                        Text("Pilot License: \(viewModel.currentUser.pilotLicenseType.type)")
                             .font(.callout)
                             .fontWeight(.semibold)
                             .foregroundStyle(.gray)
@@ -36,7 +35,7 @@ struct ConfirmationView: View {
                             .font(.title2)
                             .padding(.top, 10)
                         
-                        List(viewModel.pilotLicense.aircrafts, id: \.self) { aircraft in
+                        List(viewModel.currentUser.pilotLicenseType.aircrafts, id: \.self) { aircraft in
                             Text(aircraft)
                         }
                         .listStyle(.inset)
@@ -76,7 +75,7 @@ struct ConfirmationView: View {
             Spacer(minLength: 0)
             
             SideBarButton(.logout) {
-                coordinator.logout()
+                viewModel.logout()
             }
         }
         .padding(.horizontal, 15)
@@ -125,8 +124,6 @@ struct ConfirmationView: View {
     }
 }
 
-struct ConfirmationView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConfirmationView(coordinator: AppCoordinator(), viewModel: ConfirmationViewModel(userName: "John Doe", pilotLicense: PilotLicense(type: "ATPL", aircrafts: ["B737", "A380", "B747"])))
-    }
+#Preview {
+    ContentView()
 }

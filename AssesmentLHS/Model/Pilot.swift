@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Pilot: Decodable {
+struct Pilot: Codable {
     let pilotLicenses: [PilotLicense]
     
     enum CodingKeys: String, CodingKey {
