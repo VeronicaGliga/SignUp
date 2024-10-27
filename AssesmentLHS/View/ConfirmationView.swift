@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ConfirmationView: View {
+    // MARK: - Properties
     
     @ObservedObject var viewModel: ConfirmationViewModel
     @State private var showMenu = false
 
+    // MARK: - Body
+    
     var body: some View {
         AnimatedSideBar(
             sideMenuWidth: 200,
@@ -30,7 +33,6 @@ struct ConfirmationView: View {
                             .foregroundStyle(.gray)
                             .padding(.top, -10)
                         
-                        // List of allowed aircraft
                         Text("Allowed Aircrafts")
                             .font(.title2)
                             .padding(.top, 10)
@@ -70,9 +72,13 @@ struct ConfirmationView: View {
                 SideBarMenuView(safeArea)
             } background: {
                 Rectangle()
-                .fill(.linearGradient(colors: [.appYellow, .orange, .red], startPoint: .top, endPoint: .bottom))
+                .fill(.linearGradient(colors: [.appYellow, .orange, .red],
+                                      startPoint: .top,
+                                      endPoint: .bottom))
         }
     }
+    
+    // MARK: - ViewBuilder Functions
     
     @ViewBuilder
     func CircleView() -> some View {
@@ -111,7 +117,7 @@ struct ConfirmationView: View {
     
     @ViewBuilder
     func SideBarButton(_ tab: Tab, onTap: @escaping () -> () = {  }) -> some View {
-        Button(action: onTap, label: {
+        Button(action: onTap) {
             HStack(spacing: 12) {
                 Image(systemName: tab.rawValue)
                     .font(.title3)
@@ -124,7 +130,7 @@ struct ConfirmationView: View {
             .padding(.vertical, 10)
             .contentShape(.rect)
             .foregroundStyle(Color.primary)
-        })
+        }
     }
     
     /// Sample Tab's

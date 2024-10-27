@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - Properties
+    
     @StateObject private var container = DependencyContainer()
+    
+    // MARK: - Body
     
     var body: some View {
         Group {

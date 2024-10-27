@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AnimatedSideBar<Content: View, MenuView: View, Background: View>: View {
+    // MARK: - Properties
     /// Customization Options
     var sideMenuWidth: CGFloat = 200
     var cornerRadius: CGFloat = 25
@@ -22,6 +23,8 @@ struct AnimatedSideBar<Content: View, MenuView: View, Background: View>: View {
     @State private var lastOffsetX: CGFloat = 0
     /// Used to Dim Content View When Side Bar is Being Dragged
     @State private var progress: CGFloat = 0
+    
+    // MARK: - Body
     
     var body: some View {
         GeometryReader {
@@ -73,7 +76,8 @@ struct AnimatedSideBar<Content: View, MenuView: View, Background: View>: View {
         DragGesture()
             .updating($isDragging) { _, out, _ in
                 out = true
-            }.onChanged { value in
+            }
+            .onChanged { value in
                 /// Sometimes Gesture is being called when the host contains any Horizontal ScrollView, Usage of DispatchQueue avoids those cases.
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     guard value.startLocation.x > 10, isDragging else { return }
@@ -82,7 +86,8 @@ struct AnimatedSideBar<Content: View, MenuView: View, Background: View>: View {
                     offsetX = translationX
                     calculateProgress()
                 }
-            }.onEnded { value in
+            }
+            .onEnded { value in
                 guard value.startLocation.x > 10 else { return }
                 
                 withAnimation(.snappy(duration: 0.3, extraBounce: 0)) {

@@ -34,7 +34,7 @@ struct SignUpView: View {
                          validationAction: viewModel.isNameValid)
                     .padding(.top, 5)
                 
-                CustomTF(sfIcon: "person",
+                CustomTF(sfIcon: "doc.text",
                          hint: "Pilot License Type",
                          isDropdown: true,
                          options: viewModel.pilotLicenceTypes,
