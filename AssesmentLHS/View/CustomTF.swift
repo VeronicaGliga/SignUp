@@ -31,6 +31,14 @@ struct CustomTF: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            // Hint text overlay
+            if !value.isEmpty {
+                Text(hint)
+                    .foregroundColor(.gray)
+                    .padding(.leading, 38)
+                    .allowsHitTesting(false) // Ensures the hint text doesn't interfere with tapping on the TextField
+            }
+            
             HStack(alignment: .top, spacing: 8) {
                 Image(systemName: sfIcon)
                     .foregroundStyle(iconTint)
