@@ -51,7 +51,7 @@ struct SignUpView: View {
                          validationAction: viewModel.isPasswordValid)
                     .padding(.top, 5)
                 
-                CustomTF(sfIcon: "at",
+                CustomTF(sfIcon: "checkmark.shield",
                          hint: "Password Verification",
                          isPassword: true,
                          value: $viewModel.checkPassword,
