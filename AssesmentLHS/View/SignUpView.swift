@@ -27,18 +27,18 @@ struct SignUpView: View {
             
             VStack(spacing: 25) {
                 /// Custom Text Fields
-                CustomTF(sfIcon: "person", hint: "Full Name", value: $viewModel.fullName)
+                CustomTF(sfIcon: "person", hint: "Full Name", value: $viewModel.fullName,  validationAction: viewModel.isNameValid)
                     .padding(.top, 5)
                 
-                CustomTF(sfIcon: "person", hint: "Pilot License Type", isDropdown: true, options: viewModel.pilotLicenceTypes, value: $viewModel.selectedLicenseType)
+                CustomTF(sfIcon: "person", hint: "Pilot License Type", isDropdown: true, options: viewModel.pilotLicenceTypes, value: $viewModel.selectedLicenseType, validationAction: viewModel.isPilotLicenseValid)
                     .onAppear {
                         viewModel.getPilotLicenses()
                     }
                 
-                CustomTF(sfIcon: "lock", hint: "Password", isPassword: true, value: $viewModel.password)
+                CustomTF(sfIcon: "lock", hint: "Password", isPassword: true, value: $viewModel.password, validationAction: viewModel.isPasswordValid)
                     .padding(.top, 5)
                 
-                CustomTF(sfIcon: "at", hint: "Password Verification", isPassword: true, value: $viewModel.checkPassword)
+                CustomTF(sfIcon: "at", hint: "Password Verification", isPassword: true, value: $viewModel.checkPassword, validationAction: viewModel.isCheckedPasswordValid)
                 
                 Text("By signing up, you're agreeing to our **[Terms & Condition](https://apple.com)** and **[Privacy Policy](https://apple.com)**")
                     .font(.caption)

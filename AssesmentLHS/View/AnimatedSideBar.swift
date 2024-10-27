@@ -17,7 +17,7 @@ struct AnimatedSideBar<Content: View, MenuView: View, Background: View>: View {
     @ViewBuilder var menuView: (UIEdgeInsets) -> MenuView
     @ViewBuilder var background: Background
     /// View Properties
-    @GestureState private var isDragging: Bool = false
+    @GestureState private var isDragging = false
     @State private var offsetX: CGFloat = 0
     @State private var lastOffsetX: CGFloat = 0
     /// Used to Dim Content View When Side Bar is Being Dragged

@@ -15,11 +15,14 @@ struct CustomTF: View {
     var isDropdown: Bool = false
     var options: [String] = []
     @Binding var value: String
+    var validationAction: () -> String
     
     /// View Properties
     @State private var showPassword: Bool = false
     @State private var showDropdown: Bool = false
     @FocusState private var passwordState: HideState?
+    @State private var validationErrorMessage = "" // Local validity state
+    @FocusState private var isFocused: Bool // Tracks if the field is focused
     
     enum HideState {
         case hide
@@ -41,23 +44,50 @@ struct CustomTF: View {
                             /// Revealing Password when the user wants to show the password
                             if showPassword {
                                 TextField(hint, text: $value)
-                                    .focused($passwordState, equals: .reveal)
+                                    .focused($isFocused)
+                                    .onChange(of: isFocused) {
+                                        if !isFocused {
+                                            validationErrorMessage = validationAction()
+                                        } else {
+                                            validationErrorMessage = ""
+                                        }
+                                    }
                             } else {
                                 SecureField(hint, text: $value)
-                                    .focused($passwordState, equals: .hide)
+                                    .focused($isFocused)
+                                    .onChange(of: isFocused) {
+                                        if !isFocused {
+                                            validationErrorMessage = validationAction()
+                                        } else {
+                                            validationErrorMessage = ""
+                                        }
+                                    }
                             }
                         }
                     } else if isDropdown {
                         // Display TextField for dropdown selection
                         TextField(hint, text: $value)
-                            .onTapGesture {
-                                withAnimation {
-                                    showDropdown.toggle()
+                            .focused($isFocused)
+                            .onChange(of: isFocused) {
+                                if !isFocused {
+                                    validationErrorMessage = validationAction()
+                                    showDropdown = false
+                                } else {
+                                    validationErrorMessage = ""
+                                    showDropdown = true
                                 }
                             }
                     } else {
                         // Default TextField
                         TextField(hint, text: $value)
+                            .focused($isFocused)
+                            .onChange(of: isFocused) {
+                                if !isFocused {
+                                    validationErrorMessage = validationAction()
+                                } else {
+                                    validationErrorMessage = ""
+                                }
+                            }
                     }
                     
                     Divider()
@@ -116,6 +146,14 @@ struct CustomTF: View {
                 .cornerRadius(5)
                 .shadow(radius: 5)
                 .zIndex(1) // Ensure it stays on top
+            }
+            
+            // Validation error message
+            if !validationErrorMessage.isEmpty {
+                Text(validationErrorMessage)
+                    .font(.caption)
+                    .foregroundColor(.red)
+                    .padding(.top, 4)
             }
         }
     }

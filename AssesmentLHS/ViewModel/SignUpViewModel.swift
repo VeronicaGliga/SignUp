@@ -58,25 +58,35 @@ class SignUpViewModel: ObservableObject {
     }
     
     func validateInput() -> Bool {
-        let isNameValid = !fullName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-        let isPilotLicenseValid = pilotLicenceTypes.contains(selectedLicenseType)
-        let isPasswordValid = isPasswordValid()
-        let isCheckedPasswordValid = password == checkPassword
-        
-        return isNameValid && isPilotLicenseValid && isPasswordValid && isCheckedPasswordValid
+        isNameValid().isEmpty && isPilotLicenseValid().isEmpty && isPasswordValid().isEmpty && isCheckedPasswordValid().isEmpty
     }
     
-    private func isPasswordValid() -> Bool {
+    func isNameValid() -> String {
+        !fullName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "" : "User name should contain at least one letter"
+    }
+    
+    func isPilotLicenseValid() -> String {
+        pilotLicenceTypes.contains(selectedLicenseType) ? "" : "A valid Pilot License should be inserted"
+    }
+    
+    func isCheckedPasswordValid() -> String {
+        password == checkPassword ? "" : "Must be identical to the password"
+    }
+    
+    func isPasswordValid() -> String {
         // Check for at least 12 characters
+        var errorMessage = ""
         guard password.count >= 12 else {
-            return false
+            errorMessage = "Password must contain at least 12 characters"
+            return errorMessage
         }
         
         // Check if username is not in password (case insensitive)
         if fullName.lowercased()
             .split(separator: " ")
             .contains(where: { password.lowercased().contains($0) }) {
-            return false
+            errorMessage = "Password should not contain user name"
+            return errorMessage
         }
         
         // Initialize flags for character requirements
@@ -96,11 +106,12 @@ class SignUpViewModel: ObservableObject {
             
             // If all conditions are met, break early
             if hasUppercase && hasLowercase && hasDigit {
-                return true
+                return errorMessage
             }
         }
         
         // If any requirement is missing, return false
-        return false
+        errorMessage = "Password must contain a combination of uppercased, lowercased and numbers"
+        return errorMessage
     }
 }

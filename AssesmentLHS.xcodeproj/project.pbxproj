@@ -210,12 +210,9 @@
 		D2553CE02CCA51CC0070C089 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				D2553CD32CCA4B250070C089 /* DataManager.swift */,
-				D28B3FA52CCD26DD007BFD73 /* DataProvider.swift */,
-				D28B3FA72CCD2DF5007BFD73 /* UserDefaultsStorage.swift */,
-				D28B3FA92CCD2F63007BFD73 /* FileStorage.swift */,
-				D28B3FAB2CCD322B007BFD73 /* UserManager.swift */,
 				D28B3FAD2CCD34BE007BFD73 /* PilotLicenseManager.swift */,
+				D28B3FAB2CCD322B007BFD73 /* UserManager.swift */,
+				D28B3FB12CCE75E9007BFD73 /* Generics */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -223,9 +220,9 @@
 		D2553CE12CCA51D90070C089 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D28B3FAF2CCD3F22007BFD73 /* DependencyContainer.swift */,
 				D2553CD92CCA4CE60070C089 /* NetworkError.swift */,
 				D2553CCF2CC954860070C089 /* View+Extensions.swift */,
-				D28B3FAF2CCD3F22007BFD73 /* DependencyContainer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -246,6 +243,17 @@
 				D28B3F9C2CCD0F55007BFD73 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D28B3FB12CCE75E9007BFD73 /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				D2553CD32CCA4B250070C089 /* DataManager.swift */,
+				D28B3FA52CCD26DD007BFD73 /* DataProvider.swift */,
+				D28B3FA92CCD2F63007BFD73 /* FileStorage.swift */,
+				D28B3FA72CCD2DF5007BFD73 /* UserDefaultsStorage.swift */,
+			);
+			path = Generics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
