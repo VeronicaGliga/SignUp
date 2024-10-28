@@ -11,7 +11,6 @@
 		D2553CA32CC94E770070C089 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CA22CC94E770070C089 /* SignUpView.swift */; };
 		D2553CA52CC94E7E0070C089 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2553CA42CC94E7E0070C089 /* Assets.xcassets */; };
 		D2553CA92CC94E7E0070C089 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2553CA82CC94E7E0070C089 /* Preview Assets.xcassets */; };
-		D2553CB32CC94E7F0070C089 /* AssesmentLHSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CB22CC94E7F0070C089 /* AssesmentLHSTests.swift */; };
 		D2553CBD2CC94E800070C089 /* AssesmentLHSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CBC2CC94E800070C089 /* AssesmentLHSUITests.swift */; };
 		D2553CBF2CC94E800070C089 /* AssesmentLHSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CBE2CC94E800070C089 /* AssesmentLHSUITestsLaunchTests.swift */; };
 		D2553CCC2CC952730070C089 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CCB2CC952730070C089 /* GradientButton.swift */; };
@@ -37,6 +36,13 @@
 		D28B3FB32CCEB6B7007BFD73 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FB22CCEB6B7007BFD73 /* DataFetcher.swift */; };
 		D2BBF1342CD01E02008A33F2 /* UserDefaultsStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1332CD01E02008A33F2 /* UserDefaultsStorageTests.swift */; };
 		D2BBF1362CD01E5A008A33F2 /* SampleCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1352CD01E5A008A33F2 /* SampleCodable.swift */; };
+		D2BBF13A2CD01F8A008A33F2 /* FileStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1392CD01F8A008A33F2 /* FileStorageTests.swift */; };
+		D2BBF13E2CD02307008A33F2 /* sampleData.json in Resources */ = {isa = PBXBuildFile; fileRef = D2BBF13B2CD02084008A33F2 /* sampleData.json */; };
+		D2BBF13F2CD0230A008A33F2 /* corruptData.json in Resources */ = {isa = PBXBuildFile; fileRef = D2BBF13C2CD020F0008A33F2 /* corruptData.json */; };
+		D2BBF1422CD023D4008A33F2 /* MockFileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1412CD023D4008A33F2 /* MockFileStorage.swift */; };
+		D2BBF1442CD02423008A33F2 /* PilotLicenseManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1432CD02423008A33F2 /* PilotLicenseManagerTests.swift */; };
+		D2BBF1462CD02804008A33F2 /* MockUserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1452CD02804008A33F2 /* MockUserDefaultsStorage.swift */; };
+		D2BBF1482CD02842008A33F2 /* UserManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1472CD02842008A33F2 /* UserManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +70,6 @@
 		D2553CA62CC94E7E0070C089 /* AssesmentLHS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AssesmentLHS.entitlements; sourceTree = "<group>"; };
 		D2553CA82CC94E7E0070C089 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D2553CAE2CC94E7F0070C089 /* AssesmentLHSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssesmentLHSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2553CB22CC94E7F0070C089 /* AssesmentLHSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentLHSTests.swift; sourceTree = "<group>"; };
 		D2553CB82CC94E7F0070C089 /* AssesmentLHSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssesmentLHSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2553CBC2CC94E800070C089 /* AssesmentLHSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentLHSUITests.swift; sourceTree = "<group>"; };
 		D2553CBE2CC94E800070C089 /* AssesmentLHSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentLHSUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -91,6 +96,13 @@
 		D28B3FB22CCEB6B7007BFD73 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		D2BBF1332CD01E02008A33F2 /* UserDefaultsStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorageTests.swift; sourceTree = "<group>"; };
 		D2BBF1352CD01E5A008A33F2 /* SampleCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCodable.swift; sourceTree = "<group>"; };
+		D2BBF1392CD01F8A008A33F2 /* FileStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorageTests.swift; sourceTree = "<group>"; };
+		D2BBF13B2CD02084008A33F2 /* sampleData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sampleData.json; sourceTree = "<group>"; };
+		D2BBF13C2CD020F0008A33F2 /* corruptData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = corruptData.json; sourceTree = "<group>"; };
+		D2BBF1412CD023D4008A33F2 /* MockFileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFileStorage.swift; sourceTree = "<group>"; };
+		D2BBF1432CD02423008A33F2 /* PilotLicenseManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotLicenseManagerTests.swift; sourceTree = "<group>"; };
+		D2BBF1452CD02804008A33F2 /* MockUserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsStorage.swift; sourceTree = "<group>"; };
+		D2BBF1472CD02842008A33F2 /* UserManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,9 +177,12 @@
 		D2553CB12CC94E7F0070C089 /* AssesmentLHSTests */ = {
 			isa = PBXGroup;
 			children = (
-				D2553CB22CC94E7F0070C089 /* AssesmentLHSTests.swift */,
+				D2BBF1392CD01F8A008A33F2 /* FileStorageTests.swift */,
+				D2BBF1432CD02423008A33F2 /* PilotLicenseManagerTests.swift */,
 				D2BBF1332CD01E02008A33F2 /* UserDefaultsStorageTests.swift */,
-				D2BBF1352CD01E5A008A33F2 /* SampleCodable.swift */,
+				D2BBF1472CD02842008A33F2 /* UserManagerTests.swift */,
+				D2BBF1402CD0233C008A33F2 /* Mocks */,
+				D2BBF13D2CD02150008A33F2 /* Resources */,
 			);
 			path = AssesmentLHSTests;
 			sourceTree = "<group>";
@@ -268,6 +283,25 @@
 				D28B3FB22CCEB6B7007BFD73 /* DataFetcher.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D2BBF13D2CD02150008A33F2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D2BBF13B2CD02084008A33F2 /* sampleData.json */,
+				D2BBF13C2CD020F0008A33F2 /* corruptData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D2BBF1402CD0233C008A33F2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				D2BBF1352CD01E5A008A33F2 /* SampleCodable.swift */,
+				D2BBF1412CD023D4008A33F2 /* MockFileStorage.swift */,
+				D2BBF1452CD02804008A33F2 /* MockUserDefaultsStorage.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +418,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2BBF13E2CD02307008A33F2 /* sampleData.json in Resources */,
+				D2BBF13F2CD0230A008A33F2 /* corruptData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,9 +466,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2BBF1442CD02423008A33F2 /* PilotLicenseManagerTests.swift in Sources */,
 				D2BBF1342CD01E02008A33F2 /* UserDefaultsStorageTests.swift in Sources */,
-				D2553CB32CC94E7F0070C089 /* AssesmentLHSTests.swift in Sources */,
+				D2BBF1462CD02804008A33F2 /* MockUserDefaultsStorage.swift in Sources */,
+				D2BBF1482CD02842008A33F2 /* UserManagerTests.swift in Sources */,
+				D2BBF13A2CD01F8A008A33F2 /* FileStorageTests.swift in Sources */,
 				D2BBF1362CD01E5A008A33F2 /* SampleCodable.swift in Sources */,
+				D2BBF1422CD023D4008A33F2 /* MockFileStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
