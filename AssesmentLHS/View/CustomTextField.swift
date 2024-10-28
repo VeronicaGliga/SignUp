@@ -17,13 +17,12 @@ struct CustomTextField: View {
     var isDropdown = false
     var options: [String] = []
     @Binding var value: String
-    var validationAction: () -> String
+    @Binding var validationErrorMessage: String
     
     // MARK: - View State Properties
     
     @State private var showPassword = false
     @State private var showDropdown = false
-    @State private var validationErrorMessage = ""
     @FocusState private var isFocused: Bool // Tracks if the field is focused
     
     // MARK: - Enum
@@ -46,7 +45,7 @@ struct CustomTextField: View {
             
             dropdownOptions
             
-            if !validationErrorMessage.isEmpty {
+            if !validationErrorMessage.isEmpty && !isFocused {
                 Text(validationErrorMessage)
                     .font(.caption)
                     .foregroundColor(.red)
@@ -100,16 +99,12 @@ private extension CustomTextField {
             }
         }
         .focused($isFocused)
-        .onChange(of: isFocused) {
-            validationErrorMessage = isFocused ? "" : validationAction()
-        }
     }
     
     var dropdownField: some View {
         TextField(hint, text: $value)
             .focused($isFocused)
             .onChange(of: isFocused) {
-                validationErrorMessage = isFocused ? "" : validationAction()
                 showDropdown = isFocused
             }
     }
@@ -117,9 +112,6 @@ private extension CustomTextField {
     var defaultField: some View {
         TextField(hint, text: $value)
             .focused($isFocused)
-            .onChange(of: isFocused) {
-                validationErrorMessage = isFocused ? "" : validationAction()
-            }
     }
     
     var trailingButton: some View {

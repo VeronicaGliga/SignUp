@@ -12,6 +12,11 @@ struct SignUpView: View {
     
     @ObservedObject var viewModel: SignUpViewModel
     
+    @State private var nameErrorMessage = ""
+    @State private var licenseErrorMessage = ""
+    @State private var passwordErrorMessage = ""
+    @State private var checkPasswordErrorMessage = ""
+    
     // MARK: - Body
     
     var body: some View {
@@ -29,33 +34,45 @@ struct SignUpView: View {
             
             VStack(spacing: 25) {
                 CustomTextField(sfIcon: "person",
-                         hint: "Full Name",
-                         value: $viewModel.fullName,
-                         validationAction: viewModel.isNameValid)
-                    .padding(.top, 5)
+                                hint: "Full Name",
+                                value: $viewModel.fullName,
+                                validationErrorMessage: $nameErrorMessage)
+                .padding(.top, 5)
+                .onChange(of: viewModel.fullName) {
+                    nameErrorMessage = viewModel.isNameValid()
+                }
                 
                 CustomTextField(sfIcon: "doc.text",
-                         hint: "Pilot License Type",
-                         isDropdown: true,
-                         options: viewModel.pilotLicenceTypes,
-                         value: $viewModel.selectedLicenseType,
-                         validationAction: viewModel.isPilotLicenseValid)
-                    .onAppear {
-                        viewModel.getPilotLicenses()
-                    }
+                                hint: "Pilot License Type",
+                                isDropdown: true,
+                                options: viewModel.pilotLicenceTypes,
+                                value: $viewModel.selectedLicenseType,
+                                validationErrorMessage: $licenseErrorMessage)
+                .onAppear {
+                    viewModel.getPilotLicenses()
+                }
+                .onChange(of: viewModel.selectedLicenseType) {
+                    licenseErrorMessage = viewModel.isPilotLicenseValid()
+                }
                 
-                CustomTextField(sfIcon: "lock", 
-                         hint: "Password",
-                         isPassword: true,
-                         value: $viewModel.password,
-                         validationAction: viewModel.isPasswordValid)
-                    .padding(.top, 5)
+                CustomTextField(sfIcon: "lock",
+                                hint: "Password",
+                                isPassword: true,
+                                value: $viewModel.password,
+                                validationErrorMessage: $passwordErrorMessage)
+                .padding(.top, 5)
+                .onChange(of: viewModel.password) {
+                    passwordErrorMessage = viewModel.isPasswordValid()
+                }
                 
                 CustomTextField(sfIcon: "checkmark.shield",
-                         hint: "Password Verification",
-                         isPassword: true,
-                         value: $viewModel.checkPassword,
-                         validationAction: viewModel.isCheckedPasswordValid)
+                                hint: "Password Verification",
+                                isPassword: true,
+                                value: $viewModel.checkPassword,
+                                validationErrorMessage: $checkPasswordErrorMessage)
+                .onChange(of: viewModel.checkPassword) {
+                    checkPasswordErrorMessage = viewModel.isCheckedPasswordValid()
+                }
                 
                 Text("By signing up, you're agreeing to our **[Terms & Condition](https://apple.com)** and **[Privacy Policy](https://apple.com)**")
                     .font(.caption)
@@ -64,13 +81,13 @@ struct SignUpView: View {
                     .frame(height: 50)
                 
                 /// SignUp Button
-                GradientButton(title: "Continue", 
+                GradientButton(title: "Continue",
                                icon: "arrow.right") {
                     viewModel.registerUser()
                 }
-                .frame(maxWidth: .infinity, alignment: .trailing)
+                               .frame(maxWidth: .infinity, alignment: .trailing)
                 /// Disabling Until the Data is Valid
-                .disableWithOpacity(!viewModel.validateInput())
+                               .disableWithOpacity(!viewModel.validateInput())
             }
             .padding(.top, 20)
             
