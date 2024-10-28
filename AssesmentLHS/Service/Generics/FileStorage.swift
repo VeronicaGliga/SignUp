@@ -8,12 +8,17 @@
 import Foundation
 
 class FileStorage<T: Codable>: DataFecher {
+    // MARK: - Properties
+    
     private let bundle: Bundle
     
-    // Allow injection of a custom bundle
+    // MARK: - Init
+    
     init(bundle: Bundle = Bundle.main) {
         self.bundle = bundle
     }
+    
+    // MARK: - Functions
     
     func load(forKey key: String) throws -> T? {
         guard let path = bundle.path(forResource: key, ofType: "json") else {
