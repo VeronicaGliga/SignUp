@@ -10,11 +10,11 @@ import Foundation
 class PilotLicenseManager {
     // MARK: - Properties
     
-    let dataManager: FileStorage<Pilot>
+    let dataManager: AnyDataFetcher<Pilot>
     
     // MARK: - Init
     
-    init(dataManager: FileStorage<Pilot>) {
+    init(dataManager: AnyDataFetcher<Pilot>) {
         self.dataManager = dataManager
     }
     

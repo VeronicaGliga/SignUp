@@ -45,6 +45,7 @@
 		D2BBF1482CD02842008A33F2 /* UserManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1472CD02842008A33F2 /* UserManagerTests.swift */; };
 		D2BBF14A2CD02BA3008A33F2 /* SignUpViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1492CD02BA3008A33F2 /* SignUpViewUITests.swift */; };
 		D2BBF14F2CD056AA008A33F2 /* AnyDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF14E2CD056AA008A33F2 /* AnyDataHandler.swift */; };
+		D2BBF1512CD05997008A33F2 /* AnyDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1502CD05997008A33F2 /* AnyDataFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		D2BBF1472CD02842008A33F2 /* UserManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerTests.swift; sourceTree = "<group>"; };
 		D2BBF1492CD02BA3008A33F2 /* SignUpViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewUITests.swift; sourceTree = "<group>"; };
 		D2BBF14E2CD056AA008A33F2 /* AnyDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDataHandler.swift; sourceTree = "<group>"; };
+		D2BBF1502CD05997008A33F2 /* AnyDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDataFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 		D28B3FB12CCE75E9007BFD73 /* Generics */ = {
 			isa = PBXGroup;
 			children = (
+				D2BBF1502CD05997008A33F2 /* AnyDataFetcher.swift */,
 				D2BBF14E2CD056AA008A33F2 /* AnyDataHandler.swift */,
 				D28B3FA92CCD2F63007BFD73 /* FileStorage.swift */,
 				D28B3FA72CCD2DF5007BFD73 /* UserDefaultsStorage.swift */,
@@ -469,6 +472,7 @@
 				D2BBF14F2CD056AA008A33F2 /* AnyDataHandler.swift in Sources */,
 				D28B3FA62CCD26DD007BFD73 /* DataHandler.swift in Sources */,
 				D28B3FB02CCD3F22007BFD73 /* DependencyContainer.swift in Sources */,
+				D2BBF1512CD05997008A33F2 /* AnyDataFetcher.swift in Sources */,
 				D2553CA12CC94E770070C089 /* AssesmentLHSApp.swift in Sources */,
 				D2553CD62CCA4B4A0070C089 /* SignUpViewModel.swift in Sources */,
 				D28B3FA82CCD2DF5007BFD73 /* UserDefaultsStorage.swift in Sources */,

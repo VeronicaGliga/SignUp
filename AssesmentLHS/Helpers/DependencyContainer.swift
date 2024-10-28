@@ -21,7 +21,8 @@ class DependencyContainer: ObservableObject {
     
     init() {
         let fileStorage = FileStorage<Pilot>()
-        self.pilotLicenseManager = PilotLicenseManager(dataManager: fileStorage)
+        let anyFileHandler = AnyDataFetcher(fileStorage)
+        self.pilotLicenseManager = PilotLicenseManager(dataManager: anyFileHandler)
         
         let userDefaultsStorage = UserDefaultsStorage<User>()
         let anyDataHandler = AnyDataHandler(userDefaultsStorage)
