@@ -28,13 +28,13 @@ struct SignUpView: View {
                 .padding(.top, -5)
             
             VStack(spacing: 25) {
-                CustomTF(sfIcon: "person",
+                CustomTextField(sfIcon: "person",
                          hint: "Full Name",
                          value: $viewModel.fullName,
                          validationAction: viewModel.isNameValid)
                     .padding(.top, 5)
                 
-                CustomTF(sfIcon: "doc.text",
+                CustomTextField(sfIcon: "doc.text",
                          hint: "Pilot License Type",
                          isDropdown: true,
                          options: viewModel.pilotLicenceTypes,
@@ -44,14 +44,14 @@ struct SignUpView: View {
                         viewModel.getPilotLicenses()
                     }
                 
-                CustomTF(sfIcon: "lock", 
+                CustomTextField(sfIcon: "lock", 
                          hint: "Password",
                          isPassword: true,
                          value: $viewModel.password,
                          validationAction: viewModel.isPasswordValid)
                     .padding(.top, 5)
                 
-                CustomTF(sfIcon: "checkmark.shield",
+                CustomTextField(sfIcon: "checkmark.shield",
                          hint: "Password Verification",
                          isPassword: true,
                          value: $viewModel.checkPassword,

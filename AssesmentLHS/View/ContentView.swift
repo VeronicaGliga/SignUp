@@ -28,7 +28,6 @@ struct ContentView: View {
             }
         }
         .animation(.easeInOut, value: container.coordinator.currentView)
-        .dismissKeyboardOnTap()
     }
 }
 

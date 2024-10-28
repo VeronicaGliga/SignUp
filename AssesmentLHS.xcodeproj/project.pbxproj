@@ -14,7 +14,7 @@
 		D2553CBD2CC94E800070C089 /* AssesmentLHSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CBC2CC94E800070C089 /* AssesmentLHSUITests.swift */; };
 		D2553CBF2CC94E800070C089 /* AssesmentLHSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CBE2CC94E800070C089 /* AssesmentLHSUITestsLaunchTests.swift */; };
 		D2553CCC2CC952730070C089 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CCB2CC952730070C089 /* GradientButton.swift */; };
-		D2553CCE2CC953130070C089 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CCD2CC953130070C089 /* CustomTF.swift */; };
+		D2553CCE2CC953130070C089 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CCD2CC953130070C089 /* CustomTextField.swift */; };
 		D2553CD02CC954860070C089 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CCF2CC954860070C089 /* View+Extensions.swift */; };
 		D2553CD22CC956230070C089 /* PilotLicenses.json in Resources */ = {isa = PBXBuildFile; fileRef = D2553CD12CC956230070C089 /* PilotLicenses.json */; };
 		D2553CD62CCA4B4A0070C089 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */; };
@@ -75,7 +75,7 @@
 		D2553CBC2CC94E800070C089 /* AssesmentLHSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentLHSUITests.swift; sourceTree = "<group>"; };
 		D2553CBE2CC94E800070C089 /* AssesmentLHSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssesmentLHSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D2553CCB2CC952730070C089 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
-		D2553CCD2CC953130070C089 /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
+		D2553CCD2CC953130070C089 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D2553CCF2CC954860070C089 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D2553CD12CC956230070C089 /* PilotLicenses.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PilotLicenses.json; sourceTree = "<group>"; };
 		D2553CD52CCA4B4A0070C089 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 				D2553CE72CCA935E0070C089 /* AnimatedSideBar.swift */,
 				D2553CE52CCA8CC40070C089 /* ConfirmationView.swift */,
 				D28B3F9E2CCD10D3007BFD73 /* ContentView.swift */,
-				D2553CCD2CC953130070C089 /* CustomTF.swift */,
+				D2553CCD2CC953130070C089 /* CustomTextField.swift */,
 				D2553CCB2CC952730070C089 /* GradientButton.swift */,
 				D2553CA22CC94E770070C089 /* SignUpView.swift */,
 			);
@@ -450,7 +450,7 @@
 				D2553CA32CC94E770070C089 /* SignUpView.swift in Sources */,
 				D28B3FAE2CCD34BE007BFD73 /* PilotLicenseManager.swift in Sources */,
 				D2553CCC2CC952730070C089 /* GradientButton.swift in Sources */,
-				D2553CCE2CC953130070C089 /* CustomTF.swift in Sources */,
+				D2553CCE2CC953130070C089 /* CustomTextField.swift in Sources */,
 				D2553CD02CC954860070C089 /* View+Extensions.swift in Sources */,
 				D28B3FAA2CCD2F63007BFD73 /* FileStorage.swift in Sources */,
 				D2553CDC2CCA4E9E0070C089 /* Pilot.swift in Sources */,
