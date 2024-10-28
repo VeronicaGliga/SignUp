@@ -36,4 +36,6 @@ For testing and maintainability, I implemented **dependency injection** and used
 **Key Classes**
     * **FileStorage**: a generic data-fetching utility designed to load and decode JSON files stored within an app's bundle
     * **UserDefaultsStorage**: provides a flexible, type-safe way to store, retrieve, and delete data in UserDefaults. I used UserDefaults to store User data, because I stored only non-sensitive data. In case we'll need to create Sign In functionality in the future, we should think about other strategy like a backend connection, Oauth frameforks or Keychain.
-    * **UserManager** && **PilotLicenseManager**: are designed to manage user-related or license-related data. They allow managers to use any data handler. 
+    * **UserManager** && **PilotLicenseManager**: are designed to manage user-related or license-related data. They allow managers to use any data handler wether it is UserDefaults or a Backend Service. 
+    * **AnyDataHandler** && **AnyDataFetcher**: we use type erasure to allow the use of protocol with associated types as a property type in managers.
+    * **DependencyContainer**: is a central point for managing and injecting dependencies across an app.
