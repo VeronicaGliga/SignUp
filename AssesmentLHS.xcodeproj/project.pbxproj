@@ -35,6 +35,8 @@
 		D28B3FAE2CCD34BE007BFD73 /* PilotLicenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FAD2CCD34BE007BFD73 /* PilotLicenseManager.swift */; };
 		D28B3FB02CCD3F22007BFD73 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FAF2CCD3F22007BFD73 /* DependencyContainer.swift */; };
 		D28B3FB32CCEB6B7007BFD73 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28B3FB22CCEB6B7007BFD73 /* DataFetcher.swift */; };
+		D2BBF1342CD01E02008A33F2 /* UserDefaultsStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1332CD01E02008A33F2 /* UserDefaultsStorageTests.swift */; };
+		D2BBF1362CD01E5A008A33F2 /* SampleCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1352CD01E5A008A33F2 /* SampleCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		D28B3FAD2CCD34BE007BFD73 /* PilotLicenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotLicenseManager.swift; sourceTree = "<group>"; };
 		D28B3FAF2CCD3F22007BFD73 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		D28B3FB22CCEB6B7007BFD73 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		D2BBF1332CD01E02008A33F2 /* UserDefaultsStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorageTests.swift; sourceTree = "<group>"; };
+		D2BBF1352CD01E5A008A33F2 /* SampleCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				D2553CB22CC94E7F0070C089 /* AssesmentLHSTests.swift */,
+				D2BBF1332CD01E02008A33F2 /* UserDefaultsStorageTests.swift */,
+				D2BBF1352CD01E5A008A33F2 /* SampleCodable.swift */,
 			);
 			path = AssesmentLHSTests;
 			sourceTree = "<group>";
@@ -424,7 +430,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2BBF1342CD01E02008A33F2 /* UserDefaultsStorageTests.swift in Sources */,
 				D2553CB32CC94E7F0070C089 /* AssesmentLHSTests.swift in Sources */,
+				D2BBF1362CD01E5A008A33F2 /* SampleCodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
