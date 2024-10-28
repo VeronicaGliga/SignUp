@@ -24,7 +24,8 @@ class DependencyContainer: ObservableObject {
         self.pilotLicenseManager = PilotLicenseManager(dataManager: fileStorage)
         
         let userDefaultsStorage = UserDefaultsStorage<User>()
-        self.userManager = UserManager(dataManager: userDefaultsStorage)
+        let anyDataHandler = AnyDataHandler(userDefaultsStorage)
+        self.userManager = UserManager(dataManager: anyDataHandler)
         
         self.coordinator = AppCoordinator(userManager: userManager)
         

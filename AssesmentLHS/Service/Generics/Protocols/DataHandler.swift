@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DataHandler<T> {
+protocol DataHandler<T>: DataFetcher {
     associatedtype T
     
     func save(_ item: T, forKey key: String) throws

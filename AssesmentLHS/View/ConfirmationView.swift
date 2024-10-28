@@ -12,7 +12,7 @@ struct ConfirmationView: View {
     
     @ObservedObject var viewModel: ConfirmationViewModel
     @State private var showMenu = false
-
+    
     // MARK: - Body
     
     var body: some View {
@@ -57,13 +57,13 @@ struct ConfirmationView: View {
                 .overlay {
                     CircleView()
                         .frame(width: 200, height: 200)
-                        /// Moving When the Signup Pages Loads/Dismisses
+                    /// Moving When the Signup Pages Loads/Dismisses
                         .offset(x: 80, y: -80)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .frame(maxHeight: .infinity, alignment: .top)
                     CircleView()
                         .frame(width: 200, height: 200)
-                        /// Moving When the Signup Pages Loads/Dismisses
+                    /// Moving When the Signup Pages Loads/Dismisses
                         .offset(x: -80, y: -80)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .frame(maxHeight: .infinity, alignment: .bottom)
@@ -72,10 +72,10 @@ struct ConfirmationView: View {
                 SideBarMenuView(safeArea)
             } background: {
                 Rectangle()
-                .fill(.linearGradient(colors: [.appYellow, .orange, .red],
-                                      startPoint: .top,
-                                      endPoint: .bottom))
-        }
+                    .fill(.linearGradient(colors: [.appYellow, .orange, .red],
+                                          startPoint: .top,
+                                          endPoint: .bottom))
+            }
     }
     
     // MARK: - ViewBuilder Functions
@@ -83,7 +83,7 @@ struct ConfirmationView: View {
     @ViewBuilder
     func CircleView() -> some View {
         Circle()
-            .fill(.linearGradient(colors: [.appYellow, .orange, .red], 
+            .fill(.linearGradient(colors: [.appYellow, .orange, .red],
                                   startPoint: .top,
                                   endPoint: .bottom))
             .blur(radius: 15)
@@ -92,7 +92,7 @@ struct ConfirmationView: View {
     @ViewBuilder
     func SideBarMenuView(_ safeArea: UIEdgeInsets) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-           Text("Side Menu")
+            Text("Side Menu")
                 .font(.largeTitle.bold())
                 .padding(.bottom, 10)
             

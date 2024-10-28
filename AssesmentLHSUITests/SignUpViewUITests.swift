@@ -31,6 +31,6 @@ class SignUpViewUITests: XCTestCase {
         XCTAssertTrue(app.secureTextFields["Password"].exists, "The Password text field should be present")
         XCTAssertTrue(app.secureTextFields["Password Verification"].exists, "The Password Verification text field should be present")
         
-        XCTAssertTrue(app.buttons["Continue"].exists, "The Sign Up button should be present")
+        XCTAssertTrue(app.buttons["Register"].exists, "The Sign Up button should be present")
     }
 }

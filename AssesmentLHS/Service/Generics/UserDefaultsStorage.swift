@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserDefaultsStorage<T: Codable>: DataFecher, DataHandler {
+class UserDefaultsStorage<T: Codable>: DataFetcher, DataHandler {
     // MARK: - Properties
     
     private let userDefaults = UserDefaults.standard

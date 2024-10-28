@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DataFecher<T> {
+protocol DataFetcher<T> {
     associatedtype T
     
     func load(forKey key: String) throws -> T?

@@ -81,7 +81,7 @@ struct SignUpView: View {
                     .frame(height: 50)
                 
                 /// SignUp Button
-                GradientButton(title: "Continue",
+                GradientButton(title: "Register",
                                icon: "arrow.right") {
                     viewModel.registerUser()
                 }

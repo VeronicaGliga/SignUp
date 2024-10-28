@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FileStorage<T: Codable>: DataFecher {
+class FileStorage<T: Codable>: DataFetcher {
     // MARK: - Properties
     
     private let bundle: Bundle

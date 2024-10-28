@@ -10,11 +10,11 @@ import Foundation
 class UserManager {
     // MARK: - Properties
     
-    let dataManager: UserDefaultsStorage<User>
+    let dataManager: AnyDataHandler<User>
     
     // MARK: - Init
     
-    init(dataManager: UserDefaultsStorage<User>) {
+    init(dataManager: AnyDataHandler<User>) {
         self.dataManager = dataManager
     }
     
