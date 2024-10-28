@@ -23,12 +23,12 @@ struct ContentView: View {
                                                                       user: user))
                 }
             } else {
-                    SignUpView(viewModel: SignUpViewModel(pilotLicenseManager: container.pilotLicenseManager,
-                                                          userManager: container.userManager, coordinator: container.coordinator))
-                
+                SignUpView(viewModel: SignUpViewModel(pilotLicenseManager: container.pilotLicenseManager,
+                                                      userManager: container.userManager, coordinator: container.coordinator))
             }
         }
         .animation(.easeInOut, value: container.coordinator.currentView)
+        .dismissKeyboardOnTap()
     }
 }
 

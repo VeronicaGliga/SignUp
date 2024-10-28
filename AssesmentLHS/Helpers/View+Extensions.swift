@@ -7,6 +7,20 @@
 
 import SwiftUI
 
+struct DismissKeyboardOnTap: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(Color.clear) // Ensures it doesn’t override existing background
+            .onTapGesture {
+                hideKeyboard()
+            }
+    }
+    
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
 /// Custom SwiftUI View Extensions
 extension View {
     /// Disable With Opacity
@@ -15,5 +29,9 @@ extension View {
         self
             .disabled(condition)
             .opacity(condition ? 0.5 : 1)
+    }
+    
+    func dismissKeyboardOnTap() -> some View {
+        self.modifier(DismissKeyboardOnTap())
     }
 }

@@ -43,6 +43,7 @@
 		D2BBF1442CD02423008A33F2 /* PilotLicenseManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1432CD02423008A33F2 /* PilotLicenseManagerTests.swift */; };
 		D2BBF1462CD02804008A33F2 /* MockUserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1452CD02804008A33F2 /* MockUserDefaultsStorage.swift */; };
 		D2BBF1482CD02842008A33F2 /* UserManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1472CD02842008A33F2 /* UserManagerTests.swift */; };
+		D2BBF14A2CD02BA3008A33F2 /* SignUpViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BBF1492CD02BA3008A33F2 /* SignUpViewUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		D2BBF1432CD02423008A33F2 /* PilotLicenseManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PilotLicenseManagerTests.swift; sourceTree = "<group>"; };
 		D2BBF1452CD02804008A33F2 /* MockUserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserDefaultsStorage.swift; sourceTree = "<group>"; };
 		D2BBF1472CD02842008A33F2 /* UserManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerTests.swift; sourceTree = "<group>"; };
+		D2BBF1492CD02BA3008A33F2 /* SignUpViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			children = (
 				D2553CBC2CC94E800070C089 /* AssesmentLHSUITests.swift */,
 				D2553CBE2CC94E800070C089 /* AssesmentLHSUITestsLaunchTests.swift */,
+				D2BBF1492CD02BA3008A33F2 /* SignUpViewUITests.swift */,
 			);
 			path = AssesmentLHSUITests;
 			sourceTree = "<group>";
@@ -297,9 +300,9 @@
 		D2BBF1402CD0233C008A33F2 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				D2BBF1352CD01E5A008A33F2 /* SampleCodable.swift */,
 				D2BBF1412CD023D4008A33F2 /* MockFileStorage.swift */,
 				D2BBF1452CD02804008A33F2 /* MockUserDefaultsStorage.swift */,
+				D2BBF1352CD01E5A008A33F2 /* SampleCodable.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2553CBF2CC94E800070C089 /* AssesmentLHSUITestsLaunchTests.swift in Sources */,
+				D2BBF14A2CD02BA3008A33F2 /* SignUpViewUITests.swift in Sources */,
 				D2553CBD2CC94E800070C089 /* AssesmentLHSUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
