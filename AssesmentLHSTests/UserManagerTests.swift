@@ -18,7 +18,8 @@ final class UserManagerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockUserDefaultsStorage = MockUserDefaultsStorage()
-        userManager = UserManager(dataManager: mockUserDefaultsStorage)
+        let anyDataHandler = AnyDataHandler(mockUserDefaultsStorage)
+        userManager = UserManager(dataManager: anyDataHandler)
     }
     
     override func tearDown() {

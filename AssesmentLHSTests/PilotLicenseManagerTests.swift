@@ -16,7 +16,8 @@ final class PilotLicenseManagerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockFileStorage = MockFileStorage()
-        pilotLicenseManager = PilotLicenseManager(dataManager: mockFileStorage)
+        let anyDataFetcher = AnyDataFetcher(mockFileStorage)
+        pilotLicenseManager = PilotLicenseManager(dataManager: anyDataFetcher)
     }
     
     override func tearDown() {

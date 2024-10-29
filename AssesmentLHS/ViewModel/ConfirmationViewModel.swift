@@ -11,14 +11,14 @@ import Foundation
 class ConfirmationViewModel: ObservableObject {
     // MARK: - Properties
     
-    var userManager: UserManager
+    var userManager: UserManagerProtocol
     
     @Published var coordinator: AppCoordinator
     @Published var currentUser: User
     
     // MARK: - Init
     
-    init(userManager: UserManager, coordinator: AppCoordinator, user: User) {
+    init(userManager: UserManagerProtocol, coordinator: AppCoordinator, user: User) {
         self.userManager = userManager
         self.coordinator = coordinator
         self.currentUser = user

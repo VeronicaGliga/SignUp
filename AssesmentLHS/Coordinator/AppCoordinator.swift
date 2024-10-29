@@ -17,9 +17,9 @@ enum ViewType {
 class AppCoordinator: ObservableObject {
     // This property determines which view is currently displayed
     @Published var currentView: ViewType
-    private var userManager: UserManager
+    private var userManager: UserManagerProtocol
     
-    init(userManager: UserManager) {
+    init(userManager: UserManagerProtocol) {
         self.userManager = userManager
         // Set initial view based on user existence
         self.currentView = userManager.userExists() ? .confirmation : .signUp

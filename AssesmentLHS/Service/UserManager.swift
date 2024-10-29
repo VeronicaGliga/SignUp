@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserManager {
+class UserManager: UserManagerProtocol {
     // MARK: - Properties
     
     let dataManager: AnyDataHandler<User>

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PilotLicenseManager {
+class PilotLicenseManager: PilotLicenseProtocol {
     // MARK: - Properties
     
     let dataManager: AnyDataFetcher<Pilot>

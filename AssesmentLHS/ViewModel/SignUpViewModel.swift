@@ -11,8 +11,8 @@ import Foundation
 class SignUpViewModel: ObservableObject {
     // MARK: - Properties
     
-    let pilotLicenseManager: PilotLicenseManager
-    let userManager: UserManager
+    let pilotLicenseManager: PilotLicenseProtocol
+    let userManager: UserManagerProtocol
     
     @Published var coordinator: AppCoordinator
     
@@ -28,8 +28,8 @@ class SignUpViewModel: ObservableObject {
     
     // MARK: - Init
     
-    init(pilotLicenseManager: PilotLicenseManager, 
-         userManager: UserManager,
+    init(pilotLicenseManager: PilotLicenseProtocol,
+         userManager: UserManagerProtocol,
          coordinator: AppCoordinator) {
         self.pilotLicenseManager = pilotLicenseManager
         self.userManager = userManager

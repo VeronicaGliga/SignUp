@@ -63,6 +63,9 @@ struct SignUpView: View {
                 .padding(.top, 5)
                 .onChange(of: viewModel.password) {
                     passwordErrorMessage = viewModel.isPasswordValid()
+                    if !viewModel.checkPassword.isEmpty {
+                        checkPasswordErrorMessage = viewModel.isCheckedPasswordValid()
+                    }
                 }
                 
                 CustomTextField(sfIcon: "checkmark.shield",

@@ -12,8 +12,8 @@ class DependencyContainer: ObservableObject {
     // MARK: - Properties
     @Published var coordinator: AppCoordinator
     
-    let pilotLicenseManager: PilotLicenseManager
-    var userManager: UserManager
+    let pilotLicenseManager: PilotLicenseProtocol
+    var userManager: UserManagerProtocol
     
     var anyCancellable: AnyCancellable? = nil
 
