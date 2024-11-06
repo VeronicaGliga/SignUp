@@ -1,4 +1,4 @@
-# AssesmentLHS
+# SignUp
 
 ## Features
 
@@ -10,7 +10,7 @@
 ## Usage
 
 1. Unzip archive
-2. Open AssesmentLHS.xcodeproj
+2. Open SignUp.xcodeproj
 3. Registration Screen will display
 4. Input the required information to enable Register button
 5. Confirmation Screen will display
