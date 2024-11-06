@@ -46,4 +46,5 @@ For testing and maintainability, I implemented **dependency injection** and used
 
 ## Demo
 
-https://github.com/VeronicaGliga/SignUp/blob/main/SignUpDemo.mp4
+https://github.com/user-attachments/assets/156d94fe-e098-455f-8a55-1fc015d62c13
+
