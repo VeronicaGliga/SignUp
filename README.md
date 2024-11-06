@@ -43,3 +43,7 @@ For testing and maintainability, I implemented **dependency injection** and used
 * **UserManager** && **PilotLicenseManager**: are designed to manage user-related or license-related data. They allow managers to use any data handler wether it is UserDefaults or a Backend Service. 
 * **AnyDataHandler** && **AnyDataFetcher**: we use type erasure to allow the use of protocol with associated types as a property type in managers.
 * **DependencyContainer**: is a central point for managing and injecting dependencies across an app.
+
+## Demo
+
+https://github.com/VeronicaGliga/SignUp/blob/main/SignUpDemo.mp4
